@@ -7,12 +7,14 @@ import styles from './FeatureBox.module.scss';
 
 const FeatureBox = ({ active, icon, children }) => (
   <div className={styles.root + (active ? ' ' + styles.active : '')}>
-    {icon && (
-      <div className={styles.iconWrapper}>
-        <FontAwesomeIcon className={styles.icon} icon={icon} />
-      </div>
-    )}
-    <div className={styles.content}>{children}</div>
+    <a href='#' className={styles.features}>
+      {icon && (
+        <div className={styles.iconWrapper}>
+          <FontAwesomeIcon className={styles.icon} icon={icon} />
+        </div>
+      )}
+      <div className={styles.content}>{children}</div>
+    </a>
   </div>
 );
 
