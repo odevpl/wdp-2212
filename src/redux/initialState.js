@@ -17,6 +17,7 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       compare: true,
+      photo: 'https://images.pexels.com/photos/930390/pexels-photo-930390.jpeg',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -28,6 +29,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: true,
+      photo: 'https://images.pexels.com/photos/6480198/pexels-photo-6480198.jpeg',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -39,6 +41,7 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       compare: false,
+      photo: 'https://images.pexels.com/photos/3965513/pexels-photo-3965513.jpeg',
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -50,6 +53,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/6585614/pexels-photo-6585614.jpeg',
     },
     {
       id: 'aenean-ru-bristique-5',
@@ -61,6 +65,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2258083/pexels-photo-2258083.jpeg',
     },
     {
       id: 'aenean-ru-bristique-6',
@@ -72,6 +77,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/3771691/pexels-photo-3771691.jpeg',
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -83,6 +89,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/4846086/pexels-photo-4846086.jpeg',
     },
     {
       id: 'aenean-ru-bristique-8',
@@ -94,6 +101,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/4210805/pexels-photo-4210805.jpeg',
     },
     {
       id: 'aenean-ru-bristique-9',
@@ -105,6 +113,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2986011/pexels-photo-2986011.jpeg',
     },
     {
       id: 'aenean-ru-bristique-10',
@@ -116,6 +125,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2052939/pexels-photo-2052939.jpeg',
     },
     {
       id: 'aenean-ru-bristique-11',
@@ -127,6 +137,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2086676/pexels-photo-2086676.jpeg',
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -138,6 +149,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/707579/pexels-photo-707579.jpeg',
     },
     {
       id: 'aenean-ru-bristique-13',
@@ -149,6 +161,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2762247/pexels-photo-2762247.jpeg',
     },
     {
       id: 'aenean-ru-bristique-14',
@@ -160,6 +173,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/923192/pexels-photo-923192.jpeg',
     },
     {
       id: 'aenean-ru-bristique-15',
@@ -171,6 +185,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/3705539/pexels-photo-3705539.jpeg',
     },
     {
       id: 'aenean-ru-bristique-16',
@@ -182,6 +197,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/4846455/pexels-photo-4846455.jpeg',
     },
     {
       id: 'aenean-ru-bristique-17',
@@ -193,6 +209,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/1517145/pexels-photo-1517145.jpeg',
     },
     {
       id: 'aenean-ru-bristique-18',
@@ -204,7 +221,9 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/271696/pexels-photo-271696.jpeg',
     },
+
     {
       id: 'aenean-ru-bristique-19',
       name: 'Aenean Ru Bristique 19',
@@ -215,6 +234,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/2180883/pexels-photo-2180883.jpeg',
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -226,6 +246,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/5716713/pexels-photo-5716713.jpeg',
     },
     {
       id: 'aenean-ru-bristique-21',
@@ -237,6 +258,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/8346055/pexels-photo-8346055.jpeg',
     },
     {
       id: 'aenean-ru-bristique-22',
@@ -248,6 +270,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/4273433/pexels-photo-4273433.jpeg',
     },
     {
       id: 'aenean-ru-bristique-23',
@@ -259,6 +282,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/8082560/pexels-photo-8082560.jpeg',
     },
     {
       id: 'aenean-ru-bristique-24',
@@ -270,6 +294,7 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo: 'https://images.pexels.com/photos/1813502/pexels-photo-1813502.jpeg',
     },
   ],
   cart: {
