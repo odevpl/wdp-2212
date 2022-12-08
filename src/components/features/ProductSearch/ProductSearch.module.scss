@@ -29,11 +29,10 @@
       }
     }
 
-    select {
-      -webkit-appearance: none;
-      border: 0;
-      background-color: transparent;
-      padding: 5px 30px 5px 35px;
+    ul {
+      background-color: transparent !important;
+      cursor: pointer;
+      padding: 15px 30px 5px 35px;
       position: relative;
       z-index: 1;
       font-size: 14px;
@@ -42,6 +41,30 @@
 
     option {
       font-size: 14px;
+      display: block;
+      height: 35px;
+      font-size: 14px;
+
+      div {
+        padding-bottom: 10px;
+      }
+    
+
+      li {
+        display: none;
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 1px 0px 1px 7px;
+      
+      &:hover {
+        background-color: orange;
+      }
+    }
+
+    &:hover li {
+      display: block;
+      }
     }
   }
 
