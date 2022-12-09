@@ -38,6 +38,14 @@
       display: flex;
       visibility: hidden;
       justify-content: space-between;
+
+      a {
+        text-align: center;
+        //margin-right: 2px;
+      }
+      a:first-child {
+        margin-right: 1px;
+      }
     }
 
     img {
