@@ -39,3 +39,9 @@
     color: #ffffff;
   }
 }
+
+.favorite,
+.compare {
+  color: $primary;
+  border: 1px solid $primary;
+}
