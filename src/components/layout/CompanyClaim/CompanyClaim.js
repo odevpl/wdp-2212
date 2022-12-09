@@ -1,4 +1,5 @@
 import React from 'react';
+import Cart from '../../features/Cart/Cart';
 // import PropTypes from 'prop-types';
 
 import styles from './CompanyClaim.module.scss';
@@ -21,14 +22,15 @@ const CompanyClaim = () => (
             <img src='/images/logo.png' alt='Bazar' />
           </a>
         </div>
-        <div className={`col text-right ${styles.cart}`}>
+        <Cart />
+        {/*<div className={`col text-right ${styles.cart}`}>
           <a href='#' className={styles.cartBox}>
             <div className={styles.cartIcon}>
               <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
             </div>
-            <div className={styles.cartCounter}>0</div>
+            <div className={styles.cartCounter}>123</div>
           </a>
-        </div>
+        </div>*/}
       </div>
     </div>
   </div>
