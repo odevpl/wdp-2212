@@ -53,7 +53,10 @@
 @media (max-width: 767px) {
 
   .cart {
-    padding: 0%;
+    position: absolute;
+    margin-bottom: 40px;
+    order: 1;
+    left: 0px;
 
     .cartBox {
 
@@ -65,7 +68,7 @@
       }
 
       .cartCounter {
-        width: 19px;
+        width: 20px;
         height: 18px;
         border-radius: 12px;
         font-size: 10px;
