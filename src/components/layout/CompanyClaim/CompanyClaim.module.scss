@@ -70,3 +70,30 @@
     }
   }
 }
+
+/* Media */
+
+@media (max-width: 767px) {
+  .root {
+
+    a img {
+      height: 50px;
+      order: 0
+    }
+
+    .phoneNumber {
+      order: 1;
+      margin-top: 40px;
+
+
+      p {
+        font-size: 14px;
+        text-align: right;
+
+        .icon {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

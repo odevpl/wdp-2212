@@ -48,3 +48,32 @@
   }
 }
 
+/* Media */
+
+@media (max-width: 767px) {
+
+  .cart {
+    position: absolute;
+    margin-bottom: 40px;
+    order: 1;
+    left: 0px;
+
+    .cartBox {
+
+      .cartIcon {
+        width: 35px;
+        height: 30px;
+        border-radius: 2px;
+        font-size: 14px;
+      }
+
+      .cartCounter {
+        width: 20px;
+        height: 18px;
+        border-radius: 12px;
+        font-size: 10px;
+      }
+
+    }
+  }
+}
