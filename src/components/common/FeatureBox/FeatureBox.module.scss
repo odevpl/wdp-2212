@@ -61,6 +61,7 @@
     }
   }
 
+  &:hover, 
   &.active {
     .iconWrapper {
       color: #ffffff;
@@ -71,8 +72,16 @@
       }
     }
 
+    a {
+      text-decoration: none;
+    }
+
     .content {
       color: $primary;
     }
   }
 }
+
+
+
+
