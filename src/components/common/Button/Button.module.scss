@@ -12,6 +12,7 @@
   padding: 10px 30px;
 
   &:not(.noHover):hover {
+    animation: $hover-animation;
     color: #ffffff !important;
     background-color: $primary;
     text-decoration: none;
