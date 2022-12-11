@@ -17,6 +17,7 @@
         font-size: 13px;
 
         &:hover {
+          animation: $animation;
           color: $primary;
           text-decoration: none;
         }

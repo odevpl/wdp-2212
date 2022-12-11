@@ -9,15 +9,11 @@ import {
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
-import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { favoriteProduct } from '../../../redux/productsRedux';
 import Button from '../Button/Button';
 
 const ProductBox = ({ name, price, promo, stars, photo, favorite, id }) => {
-  console.log('favorite', favorite);
-  console.log('id', id);
-
   const dispatch = useDispatch();
 
   const handleClickFavorite = (id) => {

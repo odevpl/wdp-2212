@@ -47,6 +47,7 @@
         padding: 1px 0px 1px 7px;
       
       &:hover {
+        animation: $animation;
         background-color: orange;
       }
     }

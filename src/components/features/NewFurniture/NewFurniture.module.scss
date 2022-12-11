@@ -54,6 +54,7 @@
               &::before {
                 content: "";
                 position: absolute;
+                animation: $animation;
                 bottom: -4px;
                 left: 0;
                 width: 100%;
