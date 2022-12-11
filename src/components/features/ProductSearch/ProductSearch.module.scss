@@ -5,7 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $text-color;
-
+  
   .category {
     border-right: 1px solid $form-border-color;
     display: flex;
@@ -26,7 +26,8 @@
       &:hover {
         color: $primary;
       }
-    }
+    }  
+    
 
     ul {
       background-color: transparent !important;
@@ -71,26 +72,36 @@
       }
     
 
-      li {
+      li { 
         display: none;
         cursor: pointer;
         font-weight: 400;
         font-size: 14px;
         padding: 1px 0px 1px 7px;
-      
-      &:hover {
+      }
+
+      &:hover { 
         background-color: orange;
       }
-    }
+    
 
     &:hover li {
       display: block;
-      }
-    &:hover li {
-      display: block;
-      }
     }
-  }
+
+    &:hover li { 
+      display: block;
+    }
+
+      @media (max-width: 600px) {
+        font-size: 11px;
+        width: 163px;
+      }  
+    }    
+  }    
+    
+  
+  
 
   .searchField {
     display: flex;
@@ -104,8 +115,13 @@
       outline: none;
       opacity: 0.5;
 
-      &::placeholder {
+      &::placeholder { 
         color: $text-color;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 11px;
+        width: 110px;
       }
     }
 
@@ -113,10 +129,9 @@
       border: 0;
       background-color: transparent;
       outline: none;
-      :hover {
+      :hover { 
         color: $primary;
-      }
-    }
-  }
+      }  
+    }    
+  }          
 }
-
