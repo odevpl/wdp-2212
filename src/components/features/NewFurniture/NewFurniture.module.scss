@@ -52,6 +52,7 @@
             &.active,
             &:hover {
               &::before {
+                animation: $animation;
                 content: "";
                 position: absolute;
                 bottom: -4px;
@@ -91,6 +92,7 @@
 
             &.active,
             &:hover {
+              animation: $animation;
               background-color: $primary;
             }
           }

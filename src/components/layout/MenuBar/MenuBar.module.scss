@@ -38,6 +38,7 @@
 
       &:hover,
       &.active {
+        animation: $animation;
         background-color: $primary;
         color: #ffffff;
         border-color: $primary;
