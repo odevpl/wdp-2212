@@ -1,6 +1,5 @@
 @import "../../../styles/settings.scss";
 
-
 .root {
   border: 1px solid $form-border-color;
   display: inline-flex;
@@ -24,9 +23,6 @@
       position: absolute;
       right: 10px;
       z-index: 0;
-      &:hover {
-        color: $primary;
-      }
     }
 
     ul {
@@ -34,13 +30,6 @@
       cursor: pointer;
       padding: 15px 30px 5px 35px;
       position: relative;
-      z-index: 1;
-      font-size: 14px;
-      outline: none;
-    }
-
-    option {
-      font-size: 14px;
       display: block;
       height: 35px;
       font-size: 14px;
@@ -78,7 +67,6 @@
       padding-left: 10px;
       font-size: 14px;
       outline: none;
-      opacity: 0.5;
 
       &::placeholder {
         color: $text-color;
@@ -89,9 +77,6 @@
       border: 0;
       background-color: transparent;
       outline: none;
-      :hover {
-        color: $primary;
-      }
     }
   }
 }

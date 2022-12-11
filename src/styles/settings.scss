@@ -1,107 +1,13 @@
-$darkGray: #2a2a2a;
-$orange: #d58e32;
-$gray: #363636;
-$darkerGray: #292929;
-$lighterGray: #434343;
-
-// PLEASE DON"T USE VARIABLES ABOVE!
-
-
 $base-padding: 24px;
 
-$header-topbar-bg: $lighterGray;
-$header-bg: $gray;
+$header-topbar-bg: #434343;
+$header-bg: #363636;
 
-$footer-claim-bg: $darkGray;
-$footer-bg: $gray;
+$footer-claim-bg: #2a2a2a;
+$footer-bg: #363636;
 
-$primary: $orange;
+$primary: #d58e32;
 
-$text-color: $darkGray;
+$text-color: #2a2a2a;
 
-$form-border-color: $darkerGray;
 $form-border-color: #292929;
-
-<<<<<<< HEAD
-
-$duration: 2s;
-
-$bounce: myAnim $duration ease 0s 1 normal forwards;
-
-@keyframes myAnim {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
-
-	25%,
-	75% {
-		opacity: 0;
-	}
-}
-
-
-$animation: $bounce;
-
-  
-@keyframes rotate {
-    0% {
-      -webkit-transform: rotate3d(0, 0, 1, 0deg);
-      transform: rotate3d(0, 0, 1, 0deg);
-    }
-    25% {
-      -webkit-transform: rotate3d(0, 0, 1, 90deg);
-      transform: rotate3d(0, 0, 1, 90deg);
-    }
-    50% {
-      -webkit-transform: rotate3d(0, 0, 1, 180deg);
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    75% {
-      -webkit-transform: rotate3d(0, 0, 1, 270deg);
-      transform: rotate3d(0, 0, 1, 270deg);
-    }
-    100% {
-      -webkit-transform: rotate3d(0, 0, 1, 360deg);
-      transform: rotate3d(0, 0, 1, 360deg);
-    }
-  }
-=======
-// Hover params 
-
-$hover-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-//$hover-animation: transition: all .5s ease;;
-
-
-
-// .face:hover {
-//     animation: 
-//     transform: translate3d(0, 0, 0);
-//     backface-visibility: hidden;
-//     perspective: 1000px;
-//   }
->>>>>>> 117cb56 (ADD new yarn.lock)
-  
-  @keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
-    }
-<<<<<<< HEAD
-  }
-  
-=======
-  }
->>>>>>> 117cb56 (ADD new yarn.lock)
