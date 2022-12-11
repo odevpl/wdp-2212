@@ -6,12 +6,14 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import feedbackReducer from './feedbackRedux';
 import dealsReducer from './dealsRedux';
+import compareReducer from './compareListRedux';
 
 // define reducers
 const reducers = {
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
+  compareList: compareReducer,
   clientFeedback: feedbackReducer,
   deals: dealsReducer,
 };
