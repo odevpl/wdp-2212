@@ -20,3 +20,18 @@ $primary: $orange;
 $text-color: $darkGray;
 
 $form-border-color: $darkerGray;
+
+@keyframes bounce {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+$animation: bounce;
