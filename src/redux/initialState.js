@@ -297,6 +297,32 @@ const initialState = {
       photo: 'https://images.pexels.com/photos/1813502/pexels-photo-1813502.jpeg',
     },
   ],
+  brands: [
+    {
+      id: 'pict-1',
+      image: 'https://imgur.com/mI34Zer.jpg',
+    },
+    {
+      id: 'pict-2',
+      image: 'https://imgur.com/V5aHrvU.jpg',
+    },
+    {
+      id: 'pict-3',
+      image: 'https://imgur.com/dSeDGGa.jpg',
+    },
+    {
+      id: 'pict-4',
+      image: 'https://imgur.com/M0vcrFI.jpg',
+    },
+    {
+      id: 'pict-5',
+      image: 'https://imgur.com/8WlFg6T.jpg',
+    },
+    {
+      id: 'pict-6',
+      image: 'https://imgur.com/ioTN2D4.jpg',
+    },
+  ],
   cart: {
     products: [],
   },
