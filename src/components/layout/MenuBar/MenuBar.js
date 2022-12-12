@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
@@ -15,27 +15,27 @@ const MenuBar = ({ children }) => (
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
-              <a href='#' className={styles.active}>
+              <Link to='/' className={styles.active}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='#'>Furniture</a>
+              <Link to='/shop/furniture'>Furniture</Link>
             </li>
             <li>
-              <a href='#'>Chair</a>
+              <Link to='/shop/chair'>Chair</Link>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <Link to='/shop/table'>Table</Link>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <Link to='/shop/sofa'>Sofa</Link>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <Link to='/shop/bedroom'>Bedroom</Link>
             </li>
             <li>
-              <a href='#'>Blog</a>
+              <Link to='/blog'>Blog</Link>
             </li>
           </ul>
         </div>

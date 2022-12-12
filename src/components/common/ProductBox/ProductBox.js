@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +11,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars }) => {
+const ProductBox = ({ name, price, oldPrice, promo, stars, id }) => {
   const checkOldPrice = () => {
     if (oldPrice !== undefined) {
       return <div className={styles.oldPrice}>$ {oldPrice}</div>;
@@ -20,6 +21,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars }) => {
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
+        <Link to={`/shop/${id}`}>PHOTO</Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -29,7 +31,9 @@ const ProductBox = ({ name, price, oldPrice, promo, stars }) => {
         </div>
       </div>
       <div className={styles.content}>
-        <h5>{name}</h5>
+        <Link to={`/shop/${id}`}>
+          <h5>{name}</h5>
+        </Link>
         <div className={styles.stars}>
           {[1, 2, 3, 4, 5].map(i => (
             <a key={i} href='#'>
@@ -73,6 +77,7 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
   photo: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default ProductBox;
