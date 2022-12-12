@@ -80,6 +80,20 @@
       border-bottom: 4px solid $primary;
       transform: translateX(-50%);
     }
+    
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .oldPrice {
+      margin-right: 8px;
+      text-decoration: line-through;
+      color: $header-topbar-bg;
+      opacity: 0.5;
+    }
   }
 
   .actions {
