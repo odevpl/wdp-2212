@@ -39,6 +39,7 @@ const ProductSearch = () => {
     </form>
   );
 };
+
 ProductSearch.propTypes = {
   children: PropTypes.node,
   categories: PropTypes.array,
