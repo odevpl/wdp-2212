@@ -341,6 +341,44 @@ const initialState = {
   cart: {
     products: [],
   },
+  clientFeedback: [
+    {
+      clientId: '0',
+      clientName: 'Sideshow Bob',
+      clientJob: 'Comedian',
+      clientPhoto:
+        'https://cdn.pixabay.com/photo/2017/02/09/15/06/girl-2052641_960_720.jpg',
+      clientText:
+        'A, wie pan, moim zdaniem to nie ma tak, że dobrze, albo że niedobrze. Gdybym miał powiedzieć, co cenię w życiu najbardziej, powiedziałbym, że ludzi. Ludzi, którzy podali mi pomocną dłoń, kiedy sobie nie radziłem, kiedy byłem sam, i co ciekawe, to właśnie przypadkowe spotkania wpływają na nasze życie.',
+    },
+    {
+      clientId: '1',
+      clientName: 'Spike Spiegel',
+      clientJob: 'Bount Hunter',
+      clientPhoto:
+        'https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
+      clientText:
+        'Chodzi o to, że kiedy wyznaje się pewne wartości, nawet pozornie uniwersalne, bywa, że nie znajduje się zrozumienia, które by tak rzec, które pomaga się nam rozwijać. Ja miałem szczęście, by tak rzec, ponieważ je znalazłem, i dziękuję życiu!',
+    },
+    {
+      clientId: '2',
+      clientName: 'Mateo Moravietti',
+      clientJob: 'Liar',
+      clientPhoto:
+        'https://images.pexels.com/photos/3761521/pexels-photo-3761521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      clientText:
+        'To umiłowanie życia. To właśnie ono sprawia, że dzisiaj na przykład buduję maszyny, a jutro – kto wie? Dlaczego by nie – oddam się pracy społecznej i będę, ot, choćby, sadzić... doć— m-marchew...',
+    },
+    {
+      clientId: '3',
+      clientName: 'Random Cat',
+      clientJob: 'Killing machine',
+      clientPhoto:
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_960_720.jpg',
+      clientText:
+        'Miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau miau',
+    },
+  ],
 
   Deals: {
     sofa:
