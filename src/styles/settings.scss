@@ -3,6 +3,7 @@ $orange: #d58e32;
 $gray: #363636;
 $darkerGray: #292929;
 $lighterGray: #434343;
+$veryLightGray: #dfdfdf;
 
 // PLEASE DON"T USE VARIABLES ABOVE!
 
@@ -20,6 +21,10 @@ $primary: $orange;
 $text-color: $darkGray;
 
 $form-border-color: $darkerGray;
+
+
+$brands-color: $veryLightGray;
+
 
 
 // Edit animation duration below: 
@@ -44,6 +49,7 @@ $blink: blink $duration ease 0s 1 normal forwards;
 }
 
 @keyframes blink {
+
     0%,
     50%,
     100% {
