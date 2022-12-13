@@ -1,0 +1,123 @@
+@import "../../../styles/settings.scss";
+
+// LEFT COLUMN
+
+.leftColumn {
+    height: 50vh;
+    width: 100%;
+    display: block;
+
+.header {
+    background-color: $text-color;
+        h3 {
+        color: #e2e2e2;
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 38px;
+        margin: 0;
+        letter-spacing: 1px;
+        padding-left: 3%;
+        }
+}
+
+
+    .photo1 {
+        width: 100%;
+        display: block;
+        
+
+        .addCart {
+            .addToCartBtn {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%)
+                }
+        }
+
+        .timer {
+            position: relative; 
+            top: 220px;  
+            .time {
+                position: absolute;
+                left: 55%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                li {
+                    display: inline-block;
+                    background-color: $header-topbar-bg;
+                    margin: 10px;
+                    text-align: center;
+                    border-radius: 100px;
+                    width: 15%;
+                    h5 {          
+                        font-size: 25px;
+                        color: #e2e2e2;
+                        font-weight: 700;
+                    }
+                    p {
+                        color: #e2e2e2;
+                        font-size: 15px;
+                        line-height: 0;
+                    }
+                }
+            }
+        }
+    }       
+}
+
+
+
+// RIGHT COLUMN
+
+.rightColumn {
+    height: 50vh;
+    img {
+        width: 100%;
+        height: 60%;
+    }
+
+    .text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        padding: 40px 40px;
+        background-color: $header-topbar-bg;
+        opacity: 0.6;
+        top: 50%;  
+        left: 50%;  
+        transform: translate(-50%, -50%);
+
+        h2 {
+            color: #e2e2e2;
+            font-size: 50px;
+            font-weight: 600;
+            span {
+                font-weight: 200;
+            }
+        }
+
+        p {
+            color: #e2e2e2;
+        }
+    }
+
+    .shop {
+        position: absolute;
+        top: 75%;  
+        left: 50%;  
+        transform: translate(-50%, -50%);
+    }
+
+    .shopBtn {
+        background-color: #e2e2e2;
+        padding: 15px;
+        span {
+            color: $text-color;
+            font-weight: 600;
+        }
+    }
+    
+}
