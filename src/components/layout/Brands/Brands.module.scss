@@ -1,9 +1,20 @@
 @import "../../../styles/settings.scss";
 
 .brandsSection {
+    position: relative;
     height: 120px;
-    border: 2px solid gray;
-    display: flex;
-    
+    display: flex; 
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
+.brandsWrapper {
+    display: flex;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 1px solid $brands-color;
+    border-bottom: 1px solid $brands-color;
+}

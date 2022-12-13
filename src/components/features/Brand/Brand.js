@@ -4,7 +4,7 @@ import styles from '../Brand/Brand.module.scss';
 
 const Brand = ({ id, image }) => {
   return (
-    <div>
+    <div className={styles.brandElement}>
       <img src={image} alt={id} />
     </div>
   );
