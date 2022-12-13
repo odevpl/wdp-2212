@@ -21,17 +21,42 @@ $text-color: $darkGray;
 
 $form-border-color: $darkerGray;
 
-@keyframes bounce {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
 
-	25%,
-	75% {
-		opacity: 0;
-	}
+// Edit animation duration below: 
+
+$duration: 2s;
+
+// Animation data - DO NOT EDIT
+$bounce: bounce $duration ease 0s 1 normal forwards;
+$blink: blink $duration ease 0s 1 normal forwards;
+
+@keyframes bounce {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
-$animation: bounce;
+@keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+// Choose animation below 
+
+$animation: $bounce;
+
