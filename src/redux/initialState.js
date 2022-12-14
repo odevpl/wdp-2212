@@ -341,6 +341,24 @@ const initialState = {
   cart: {
     products: [],
   },
+
+  Deals: {
+    sofa:
+      'https://images.pexels.com/photos/6480707/pexels-photo-6480707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    officeChair:
+      'https://zona-design.pl/29946-large_default/krzeslo-biurowe-turin-.jpg',
+    bed: 'https://kolo-materace.com/1755-large_default/lozko-tapicerowane-80295.jpg',
+    info1a: 'GUEST ROOM',
+    info1b: 'SOFA',
+    bargain: '-20%',
+    info2a: 'OFFICE ',
+    info2b: 'CHAIR',
+    info2c: 'COLLECTION',
+    price: '$200.00',
+    info3a: 'SPECIAL',
+    info3b: 'COLLECTION',
+    infoDeal: 'SAVE UP 45% OF FURNITURE',
+  },
 };
 
 export default initialState;
