@@ -11,6 +11,7 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import PropTypes from 'prop-types';
 
 const Promotion = (photo1, photo2, price, oldPrice, stars) => {
   const checkOldPrice = () => {
@@ -129,6 +130,14 @@ const Promotion = (photo1, photo2, price, oldPrice, stars) => {
       </div>
     </div>
   );
+};
+
+Promotion.propTypes = {
+  photo1: PropTypes.object,
+  photo2: PropTypes.object,
+  stars: PropTypes.node,
+  price: PropTypes.node,
+  oldPrice: PropTypes.node,
 };
 
 export default Promotion;
