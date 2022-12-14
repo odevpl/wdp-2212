@@ -1,4 +1,5 @@
 import React from 'react';
+import Brands from '../../layout/Brands/Brands';
 // import PropTypes from 'prop-types';
 
 import styles from './Homepage.module.scss';
@@ -10,6 +11,7 @@ const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
     <NewFurniture />
+    <Brands />
   </div>
 );
 
