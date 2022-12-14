@@ -13,7 +13,7 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
 
-const Promotion = (photo1, photo2, price, oldPrice, stars) => {
+const Promotion = ({ photo1, photo2, price, oldPrice, stars }) => {
   const checkOldPrice = () => {
     if (oldPrice !== undefined) {
       return <div className={styles.oldPrice}>$ {oldPrice}</div>;

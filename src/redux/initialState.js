@@ -33,6 +33,8 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
+      photo2:
+        'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
   ],
 
