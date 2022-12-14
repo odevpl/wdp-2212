@@ -19,7 +19,6 @@ const ProductSearch = () => {
         {/* <select name='' id=''>
         <option value=''>Select a category</option>
       </select> */}
-        {console.log('categories', categories)}
         <div>
           <ul><div>Select a category</div>
             { categories.map(category => (

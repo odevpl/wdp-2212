@@ -29,7 +29,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, photo, favorite, id }
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <Link to={`/shop/${id}`}>PHOTO</Link>
+        <Link to={`/shop/${id}`}><img src={photo} alt='furniture' /></Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
