@@ -9,13 +9,21 @@ import {
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { useDispatch } from 'react-redux';
+import { favoriteProduct } from '../../../redux/productsRedux';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, id }) => {
+const ProductBox = ({ name, price, oldPrice, promo, stars, photo, favorite, id }) => {
+  const dispatch = useDispatch();
+
   const checkOldPrice = () => {
     if (oldPrice !== undefined) {
       return <div className={styles.oldPrice}>$ {oldPrice}</div>;
     }
+  };
+
+  const handleClickFavorite = (id) => {
+    dispatch(favoriteProduct(id));
   };
 
   return (
@@ -49,7 +57,7 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, id }) => {
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button variant={!favorite ? 'outline' : 'compare'} onClick={(e) => {e.preventDefault(); handleClickFavorite(id);}}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant='outline'>
