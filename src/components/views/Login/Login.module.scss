@@ -1,0 +1,13 @@
+@import "../../../styles/settings.scss";
+
+.root {
+    padding: 5% 0;
+    height: 700px;
+}
+
+.loginButton {
+    //background-color: gold;
+    &:hover {
+        text-decoration: underline;
+    }
+}
