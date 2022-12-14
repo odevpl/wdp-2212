@@ -2,14 +2,28 @@ import React from 'react';
 import styles from './Promotion.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import {
+  faStar,
+  faExchangeAlt,
+  faShoppingBasket,
+  faCaretLeft,
+  faCaretRight,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 
-const Promotion = (photo1, photo2) => {
+const Promotion = (photo1, photo2, price, oldPrice, stars) => {
+  const checkOldPrice = () => {
+    if (oldPrice !== undefined) {
+      return <div className={styles.oldPrice}>$ {oldPrice}</div>;
+    }
+  };
+
   return (
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-5'>
+          <div className='col-4'>
             <div className={styles.leftColumn}>
               <div className={styles.header}>
                 <h3>Hot Deals</h3>
@@ -22,31 +36,64 @@ const Promotion = (photo1, photo2) => {
                     <span>ADD TO CART</span>
                   </Button>
                 </div>
-                <div className={styles.timer}>
-                  <ul className={styles.time}>
-                    <li>
-                      <h5>25</h5>
-                      <p>DAYS</p>
-                    </li>
-                    <li>
-                      <h5>10</h5>
-                      <p>HRS</p>
-                    </li>
-                    <li>
-                      <h5>55</h5>
-                      <p>MINS</p>
-                    </li>
-                    <li>
-                      <h5>30</h5>
-                      <p>SECS</p>
-                    </li>
-                  </ul>
+
+                <ul className={styles.time}>
+                  <li>
+                    <h5>25</h5>
+                    <p>DAYS</p>
+                  </li>
+                  <li>
+                    <h5>10</h5>
+                    <p>HRS</p>
+                  </li>
+                  <li>
+                    <h5>55</h5>
+                    <p>MINS</p>
+                  </li>
+                  <li>
+                    <h5>30</h5>
+                    <p>SECS</p>
+                  </li>
+                </ul>
+              </div>
+              <div className={styles.content}>
+                <div className={styles.background}>
+                  <div className={styles.stars}>
+                    {[1, 2, 3, 4, 5].map(i => (
+                      <a key={i} href='#'>
+                        {i <= stars ? (
+                          <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                        ) : (
+                          <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                        )}
+                      </a>
+                    ))}
+                  </div>
+                  <div className={styles.line}></div>
+                </div>
+                <div className={styles.outlines}>
+                  <Button className={styles.option} variant='outline'>
+                    <FontAwesomeIcon icon={faEye}>Prewiev</FontAwesomeIcon>
+                  </Button>
+                  <Button className={styles.option} variant='outline'>
+                    <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+                  </Button>
+                  <Button className={styles.option} variant='outline'>
+                    <FontAwesomeIcon icon={faExchangeAlt}>
+                      Add to compare
+                    </FontAwesomeIcon>
+                  </Button>
+                </div>
+                <div className={styles.price}>
+                  {checkOldPrice()}
+                  <Button noHover variant='small'>
+                    $ {price}
+                  </Button>
                 </div>
               </div>
-              <div className={styles.buttons}></div>
             </div>
           </div>
-          <div className='col-7'>
+          <div className='col-8'>
             <div className={styles.rightColumn}>
               <div className={styles.photo2}>
                 <img src={photo2} alt='photo2' />
@@ -59,6 +106,20 @@ const Promotion = (photo1, photo2) => {
                 <div className={styles.shop}>
                   <Button variant='small' className={styles.shopBtn}>
                     <span>SHOP NOW</span>
+                  </Button>
+                </div>
+                <div className={styles.buttons}>
+                  <Button variant='small' className={styles.left}>
+                    <FontAwesomeIcon
+                      className={styles.left}
+                      icon={faCaretLeft}
+                    ></FontAwesomeIcon>
+                  </Button>
+                  <Button variant='small' className={styles.right}>
+                    <FontAwesomeIcon
+                      className={styles.right}
+                      icon={faCaretRight}
+                    ></FontAwesomeIcon>
                   </Button>
                 </div>
               </div>

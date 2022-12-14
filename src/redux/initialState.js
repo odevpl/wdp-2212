@@ -7,6 +7,35 @@ const initialState = {
     { id: 'dining', name: 'Dining' },
   ],
 
+  hotDeals: [
+    {
+      id: 'aenean-ru-bristique-12',
+      name: 'Aenean Ru Bristique 12',
+      category: 'bed',
+      oldPrice: 149,
+      price: 100,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      favorite: true,
+      compare: false,
+      photo1:
+        'https://images.pexels.com/photos/6707630/pexels-photo-6707630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+
+    {
+      id: 'aenean-ru-bristique-23',
+      name: 'Aenean Ru Bristique 23',
+      category: 'bed',
+      price: 250,
+      stars: 2,
+      promo: 'sale',
+      newFurniture: true,
+      favorite: false,
+      compare: false,
+    },
+  ],
+
   products: [
     {
       id: 'aenean-ru-bristique-1',
