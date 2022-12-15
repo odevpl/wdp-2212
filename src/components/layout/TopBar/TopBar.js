@@ -39,10 +39,10 @@ const TopBar = () => (
               </NavLink>
             </li>
             <li>
-              <a href='#'>
+              <NavLink exact to={'/register'}>
                 <FontAwesomeIcon className={styles.icon} icon={faLock} />{' '}
                 <span>Register</span>
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href='#'>
