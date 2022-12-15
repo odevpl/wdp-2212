@@ -5,11 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faExchangeAlt, faShoppingBasket, faCaretLeft, faCaretRight, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { getDeals } from '../../../redux/hotDealsRedux';
 
-const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
+const Promotion = () => {
+
+  const dealsList= useSelector(getDeals);
+
   const checkOldPrice = () => {
-    if (oldPrice !== undefined) {
-      return <div className={styles.oldPrice}>$ {oldPrice}</div>;
+    if (dealsList[0].oldPrice !== undefined) {
+      return <div className={styles.oldPrice}>$ {dealsList[0].oldPrice}</div>;
     }
   };
 
@@ -23,7 +28,7 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
                 <h3>Hot Deals</h3>
               </div>
               <div className={styles.photo1}>
-                <img src={photo1} alt='photo1' />
+                <img className={styles.pic1} src={dealsList[0].photo1} alt='photo1' />
                 <div className={styles.addCart}>
                   <Button variant='small' className={styles.addToCartBtn}>
                     <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon>
@@ -49,13 +54,13 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
                   </li>
                 </ul>
               </div>
-              <h5>{name}</h5>
+              <h5>{dealsList[0].name}</h5>
               <div className={styles.content}>
                 <div className={styles.background}>
                   <div className={styles.stars}>
                     {[1, 2, 3, 4, 5].map(i => (
                       <a key={i} href='#'>
-                        {i <= stars ? (
+                        {i <= dealsList[0].stars ? (
                           <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                         ) : (
                           <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
@@ -81,7 +86,7 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
                 <div className={styles.price}>
                   {checkOldPrice()}
                   <Button noHover variant='small'>
-                    $ {price}
+                    $ {dealsList[0].price}
                   </Button>
                 </div>
               </div>
@@ -90,7 +95,7 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
           <div className='col-8'>
             <div className={styles.rightColumn}>
               <div className={styles.photo2}>
-                <img src={photo2} alt='photo2' />
+                <img src={dealsList[1].photo2} alt='photo2' />
                 <div className={styles.text}>
                   <h2>
                     <span>INDOOR</span> FURNITURE
