@@ -1,0 +1,31 @@
+@import "../../../styles/settings.scss";
+
+.container {
+    display: inline-block;
+}
+
+.searchInput input {
+    padding: 10px;
+    border: 2px solid $veryLightGray;
+    float: left;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.blogUl {
+    padding: 0px;
+}
+.blogUl li {
+    list-style-type: none;
+    padding: 0px;
+    border-bottom: 1px solid gray;
+}
+
+.sectionTitleRight {
+
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: bold;
+}
