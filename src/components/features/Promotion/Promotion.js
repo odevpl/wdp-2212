@@ -2,18 +2,11 @@ import React from 'react';
 import styles from './Promotion.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-  faCaretLeft,
-  faCaretRight,
-  faEye,
-} from '@fortawesome/free-solid-svg-icons';
+import { faStar, faExchangeAlt, faShoppingBasket, faCaretLeft, faCaretRight, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
 
-const Promotion = ({ photo1, photo2, price, oldPrice, stars }) => {
+const Promotion = ({ photo1, photo2, price, oldPrice, stars, name }) => {
   const checkOldPrice = () => {
     if (oldPrice !== undefined) {
       return <div className={styles.oldPrice}>$ {oldPrice}</div>;
@@ -37,7 +30,6 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars }) => {
                     <span>ADD TO CART</span>
                   </Button>
                 </div>
-
                 <ul className={styles.time}>
                   <li>
                     <h5>25</h5>
@@ -57,6 +49,7 @@ const Promotion = ({ photo1, photo2, price, oldPrice, stars }) => {
                   </li>
                 </ul>
               </div>
+              <h5>{name}</h5>
               <div className={styles.content}>
                 <div className={styles.background}>
                   <div className={styles.stars}>
@@ -138,6 +131,7 @@ Promotion.propTypes = {
   stars: PropTypes.node,
   price: PropTypes.node,
   oldPrice: PropTypes.node,
+  name: PropTypes.string,
 };
 
 export default Promotion;

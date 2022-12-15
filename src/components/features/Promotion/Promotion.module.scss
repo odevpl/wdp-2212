@@ -1,9 +1,6 @@
 @import "../../../styles/settings.scss";
 
-// LEFT COLUMN
-
-@import "../../../styles/settings.scss";
-
+.root {
 // LEFT COLUMN
 
 .leftColumn {
@@ -11,7 +8,6 @@
     width: 100%;
     display: block;
     border: 5px solid lightgray;
-
     .header {
         background-color: $text-color;
             h3 {
@@ -28,11 +24,9 @@
     .photo1 {
         width: 100%;
         display: block;
-
         .img {
             z-index: 1;
         }
-
         .addCart {
             .addToCartBtn {
               
@@ -52,7 +46,6 @@
         transform: translate(-50%, -50%);
         width: 100%;
         visibility: hidden;
-
             li {
                 display: inline-block;
                 background-color: $header-topbar-bg;
@@ -75,7 +68,6 @@
                 }
             }
         }
-
     }
 
     .background {
@@ -95,7 +87,6 @@
         position: absolute;
         top: 90%;
         left: 85%;
-        
         .oldPrice {
         }
     }
@@ -105,7 +96,6 @@
         border-bottom: 1px solid #2a2a2a;
         position: relative;
         margin-top: 115%;
-        
         &::before {
             content: "";
             position: absolute;
@@ -114,8 +104,7 @@
             width: 30px;
             border-bottom: 4px solid $primary;
             transform: translateX(-50%);
-        }
-            
+        }    
     }
 
     .stars {
@@ -130,7 +119,6 @@
             color: $text-color;
         }
     }
-
 }   
     
 
@@ -154,7 +142,6 @@
         top: 50%;  
         left: 50%;  
         transform: translate(-50%, -50%);
-
         h2 {
             color: #e2e2e2;
             font-size: 50px;
@@ -163,7 +150,6 @@
                 font-weight: 200;
             }
         }
-
         p {
             color: #e2e2e2;
         }
@@ -193,12 +179,12 @@
         left: 50%;  
         transform: translate(-50%, -50%);
         display: inline-block;
-        .left {
-            width: 45%;
-        }
-        .right {
-            width: 49%;
-        }
+            .left {
+                width: 45%;
+            }
+            .right {
+                width: 49%;
+            }
+        }  
     }
-    
 }
