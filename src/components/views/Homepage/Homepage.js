@@ -1,5 +1,6 @@
 import React from 'react';
 import Brands from '../../layout/Brands/Brands';
+import Banner from '../../features/Banner/Banner';
 // import PropTypes from 'prop-types';
 
 import styles from './Homepage.module.scss';
@@ -11,6 +12,7 @@ import { Feedback } from '../../features/Feedback/Feedback';
 
 const Homepage = () => (
   <div className={styles.root}>
+    <Banner />
     <FeatureBoxes />
     <DealsContainer />
     <NewFurniture />

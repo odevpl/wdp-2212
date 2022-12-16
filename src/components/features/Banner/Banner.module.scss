@@ -1,0 +1,29 @@
+@import "../../../styles/settings.scss";
+
+.bannerGroup {
+    background-color: $banner-group-bg;
+    height: 220px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    flex-direction: column;
+}
+
+.titleTop {
+    font-size: 54px;
+    font-weight: 300;
+    span {
+        font-weight: bold;
+    }
+}
+
+.titleBottom {
+    font-size: 25px;
+    font-weight: 300;
+    span {
+        color: $projectGold; 
+    }
+}
+
