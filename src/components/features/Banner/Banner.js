@@ -14,9 +14,16 @@ const Banner = () => {
           </div>
           <div>
             <p className={styles.titleBottom}>
-              always <span>25%</span> off or more
+              <span className={styles.alwaysSpan}>always </span>
+              <span className={styles.span}> 25% </span> off or more
             </p>
           </div>
+        </div>
+        <div className={styles.bottomBar}>
+          <p>
+            Home <span className={styles.speciaSign}>&gt;</span>{' '}
+            <span className={styles.bottomBarColor}>Furniture</span>
+          </p>
         </div>
       </div>
     </Container>

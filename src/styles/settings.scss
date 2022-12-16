@@ -8,7 +8,8 @@ $veryLightGray: #dfdfdf;
 $projectGold: #d58e32;
 $projectGoldLight: #d8ae77;
 $projectGoldDark: #d47f10;
-$bannerBackground: #3F3F3F;
+$elementGrayLight: #B6B6B6;
+
 
 // PLEASE DON"T USE VARIABLES ABOVE!
 
@@ -32,7 +33,8 @@ $login-main-color: $projectGold;
 $login-main-light: $projectGoldLight;
 $login-main-dark: $projectGoldDark;
 
-$banner-group-bg: $bannerBackground;
+$banner-group-bg: $gray;
+$banner-bottom: $elementGrayLight;
 
 // Edit animation duration below:
 
