@@ -108,7 +108,7 @@ const Promotion = () => {
           <div className='col-8'>
             <div className={styles.rightColumn}>
               <div className={styles.photo2}>
-                <img src={dealsList[1].photo2} alt='photo2' />
+                <img className={styles.pic2} src={dealsList[1].photo2} alt='photo2' />
                 <div className={styles.text}>
                   <h2>
                     <span>INDOOR</span> FURNITURE

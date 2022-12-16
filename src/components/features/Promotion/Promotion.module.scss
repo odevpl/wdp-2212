@@ -26,9 +26,9 @@
                 border-radius: 6px;
                 background-color: #e1e1e1;
                 font-size: 0;
-            }
-            &:hover {
-                color: $primary;
+                &:hover {
+                    color: $primary;
+                }
             }
         }
     } 
@@ -179,9 +179,9 @@
 .rightColumn {
     height: 70vh;
     width: 100%;
-    img {
+    .pic2 {
         width: 100%;
-        height: 60%;
+        height:500px;
     }
 
     .text {
