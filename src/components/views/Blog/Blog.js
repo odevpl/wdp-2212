@@ -21,7 +21,7 @@ const Blog = () => {
               do Instytutu. Na zakręcała, unosił się, Ośla Łączka walczył i biegu
               jałowego oraz regulator lub gazowymi komplet sześć w opustoszałej głowie
               jakichś paragrafów razem z fotelem że w kieszonce od zegarka zapomniana.
-              Przed z pakowaniem ich do kieszeni.
+              Przed z pakowaniem ich do kieszeni. Ręce żelazne nie przyjmują.
             </p>
             <div className={styles.blogInfoSection + ' row'}>
               <div className={styles.postInfoSection + ' col-9'}>
