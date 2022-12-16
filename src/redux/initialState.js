@@ -398,6 +398,10 @@ const initialState = {
     info3b: 'COLLECTION',
     infoDeal: 'SAVE UP 45% OF FURNITURE',
   },
+
+  display: {
+    size: '',
+  },
 };
 
 export default initialState;

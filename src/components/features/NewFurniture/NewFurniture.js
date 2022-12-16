@@ -19,12 +19,10 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, display } = this.props;
     const { activeCategory, activePage } = this.state;
-
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
-
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -38,6 +36,8 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
+
+    console.log('Viewport Size: ', display);
 
     return (
       <div className={styles.root}>
@@ -70,7 +70,14 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-sm-4 col-lg-3'>
+              <div
+                key={item.id}
+                className={
+                  (display === 'desktop' && 'col-3') ||
+                  (display === 'tablet' && 'col-4') ||
+                  (display === 'mobile' && 'col-6')
+                }
+              >
                 <ProductBox {...item} />
               </div>
             ))}
@@ -100,11 +107,13 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  display: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  display: [],
 };
 
 export default NewFurniture;
