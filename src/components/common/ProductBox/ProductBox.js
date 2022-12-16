@@ -13,7 +13,17 @@ import { useDispatch } from 'react-redux';
 import { favoriteProduct } from '../../../redux/productsRedux';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, oldPrice, promo, stars, photo, favorite, id }) => {
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  stars,
+  photo,
+  favorite,
+  id,
+  compare,
+}) => {
   const dispatch = useDispatch();
 
   const checkOldPrice = () => {
@@ -22,14 +32,16 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, photo, favorite, id }
     }
   };
 
-  const handleClickFavorite = (id) => {
+  const handleClickFavorite = id => {
     dispatch(favoriteProduct(id));
   };
 
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
-        <Link to={`/shop/${id}`}><img src={photo} alt='furniture' /></Link>
+        <Link to={`/shop/${id}`}>
+          <img src={photo} alt='furniture' />
+        </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
           <Button variant='small'>Quick View</Button>
@@ -57,10 +69,17 @@ const ProductBox = ({ name, price, oldPrice, promo, stars, photo, favorite, id }
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant={!favorite ? 'outline' : 'compare'} onClick={(e) => {e.preventDefault(); handleClickFavorite(id);}}>
+          <Button
+            favorite={favorite}
+            variant='outline'
+            onClick={e => {
+              e.preventDefault();
+              handleClickFavorite(id);
+            }}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button compare={compare} variant='outline'>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>

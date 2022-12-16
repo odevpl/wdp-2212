@@ -88,7 +88,6 @@
       border-bottom: 4px solid $primary;
       transform: translateX(-50%);
     }
-    
   }
 
   .price {
@@ -110,4 +109,9 @@
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.favorite,
+.compare {
+  color: $primary;
 }
