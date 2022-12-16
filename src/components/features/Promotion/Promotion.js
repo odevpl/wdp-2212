@@ -27,6 +27,19 @@ const Promotion = () => {
               <div className={styles.header}>
                 <h3>Hot Deals</h3>
               </div>
+              <div className={styles.dots}>  
+                <ul>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                  <li>
+                    <a href="#"></a>
+                  </li>
+                </ul>
+              </div>
               <div className={styles.photo1}>
                 <img className={styles.pic1} src={dealsList[0].photo1} alt='photo1' />
                 <div className={styles.addCart}>
@@ -54,7 +67,7 @@ const Promotion = () => {
                   </li>
                 </ul>
               </div>
-              <h5>{dealsList[0].name}</h5>
+              <h5 className={styles.name}>{dealsList[0].name}</h5>
               <div className={styles.content}>
                 <div className={styles.background}>
                   <div className={styles.stars}>
