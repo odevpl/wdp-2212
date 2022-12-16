@@ -1,0 +1,58 @@
+@import "../../../styles/settings.scss";
+
+.bannerGroup {
+    background-color: $banner-group-bg;
+    height: 200px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    flex-direction: column;
+    line-height: 27px;
+}
+
+.titleTop {
+    font-size: 54px;
+    font-weight: 300;
+    padding-top: 27px;
+    span {
+        font-weight: bold;
+    }
+}
+
+.titleBottom {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    padding-left: 9px;
+    .span {
+        color: $projectGold; 
+        letter-spacing: 11px;
+        font-weight: 500;
+    }
+    .alwaysSpan {
+        letter-spacing: 9px;
+    }
+}
+
+.bottomBar {
+    height: 57px;
+    width: 100%;
+    background-color: $banner-bottom;
+    display: flex;
+    align-items: center;
+    padding-top: 14px;
+    padding-left: 10px;
+    font-size: 17px;
+
+    .specialSign {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .bottomBarColor {
+        color: $projectGold;
+    }
+}
+
