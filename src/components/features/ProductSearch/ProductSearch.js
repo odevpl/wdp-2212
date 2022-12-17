@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl, faSearch, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 import styles from './ProductSearch.module.scss';
 
 const ProductSearch = () => {
@@ -31,9 +31,9 @@ const ProductSearch = () => {
       </div>
       <div className={styles.searchField}>
         <input placeholder='Search products...' type='text' />
-        <button>
+        <Link to={'/search'}>
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-        </button>
+        </Link>
       </div>
     </form>
   );
