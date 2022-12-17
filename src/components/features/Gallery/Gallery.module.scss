@@ -1,0 +1,211 @@
+@import "../../../styles/settings.scss";
+
+.photoContainer {
+  position: relative;
+}
+
+.heading {
+  position: relative;
+  margin-bottom: 20px;
+
+  h3 {
+    color: $primary;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 38px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 45px;
+    border-bottom: 4px solid $primary;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    border-bottom: 4px solid #e2e2e2;
+  }
+
+}
+
+.photo {
+  max-width: 100%;
+  height: 100%;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-30%);
+  margin-left: 15px;
+
+  a {
+    background-color: white;
+    color: black;
+    margin: 5px;
+  }
+}
+
+.priceBox {
+  position: absolute;
+  right: 15%;
+  bottom: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.slider {
+  .photo {
+    max-width: 100px;
+  }
+}
+ 
+.name {
+  background-color: white;
+  height: 125px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 40px solid black;
+    border-right: 40px solid white;
+    width: 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top: 40px solid white;
+    border-right: 40px solid black;
+    width: 0;
+  }
+}
+
+.menu {
+  text-align: center;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      margin: 0 0.5rem;
+      font-weight: 600;
+
+      a {
+        color: rgb(42, 42, 42);
+        position: relative;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+
+        &.active {
+          color: $primary;
+          border-top: 4px solid $primary;
+        }
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.promotion {
+  span {
+    color: rgb(65, 207, 65);
+    font-size: 40px;
+    font-weight: bold;
+  }
+  p {
+    color: $primary;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  a {
+    background-color: green;
+  }
+  .promotionBox {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+  }
+}
+
+
+.sliderWrapper {
+  margin-top: 10px;
+  display: flex;
+
+  a {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+  }
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+
+  img {
+    width: 14.5%;
+    margin: 0 5px;
+    object-fit: cover;
+
+    &.active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.stars {
+  a {
+    text-decoration: none;
+    color: rgb(42, 42, 42);
+  }
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
