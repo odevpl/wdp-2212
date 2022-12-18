@@ -6,7 +6,7 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
-  
+
   hotDeals: [
     {
       id: 'aenean-ru-bristique-12',
@@ -19,7 +19,8 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       compare: false,
-      photo1: 'https://images.pexels.com/photos/6707630/pexels-photo-6707630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      photo1:
+        'https://images.pexels.com/photos/6707630/pexels-photo-6707630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
 
     {
@@ -32,12 +33,13 @@ const initialState = {
       newFurniture: true,
       favorite: false,
       compare: false,
-      photo2: 'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      photo2:
+        'https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     },
   ],
 
   compareList: [],
-  
+
   products: [
     {
       id: 'aenean-ru-bristique-1',
@@ -46,6 +48,7 @@ const initialState = {
       price: 30,
       oldPrice: 45,
       stars: 2,
+      userStars: 3,
       promo: 'sale',
       newFurniture: true,
       favorite: true,
