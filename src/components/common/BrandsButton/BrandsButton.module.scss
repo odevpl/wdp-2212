@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+
+.brandsButton {
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+}
+
+.brandsIcon {
+    z-index: 50;
+    color: gold;
+}

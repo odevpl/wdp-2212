@@ -38,6 +38,14 @@
       display: flex;
       visibility: hidden;
       justify-content: space-between;
+
+      a {
+        text-align: center;
+        //margin-right: 2px;
+      }
+      a:first-child {
+        margin-right: 1px;
+      }
     }
 
     img {
@@ -82,10 +90,28 @@
     }
   }
 
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .oldPrice {
+      margin-right: 8px;
+      text-decoration: line-through;
+      color: $header-topbar-bg;
+      opacity: 0.5;
+    }
+  }
+
   .actions {
     padding: 15px 10px 10px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.favorite,
+.compare {
+  color: $primary;
 }

@@ -1,0 +1,71 @@
+@import "../../../styles/settings.scss";
+
+.root {
+    padding: 5% 0;
+    height: 700px;
+}
+
+.button {
+    background-color: $login-main-color;
+    margin: 0 auto;
+    display: flex;
+    background-image: linear-gradient($login-main-light, $login-main-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    border: 0.5px solid grey;
+    box-shadow: 1px 1px 2px grey;
+    color: #291f17;
+    font-weight: bold;
+}
+
+.button:active {
+    background-image: linear-gradient($login-main-color, $login-main-light);
+    text-decoration: none;
+}
+.wrapper {
+    border-top: 5px solid $login-main-color;
+    width: 540px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px grey;
+    margin: 0 auto;
+  }
+
+.inputGroup {
+    margin-bottom: 15px;
+ }
+
+ .form {
+    padding: 40px;
+    font-size: 14px;
+}
+
+.loginLabel {
+    display: inline-block;
+    margin-bottom: 5px;
+	font-weight: 500;
+	letter-spacing: 1px;
+ }
+
+ .loginInput {
+    width: 100%;
+    padding: 8px;
+    border: 0.5px solid grey;
+    border-radius: 5px;
+ }
+

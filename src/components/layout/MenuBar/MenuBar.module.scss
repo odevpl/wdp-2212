@@ -5,13 +5,39 @@
   background-color: #ffffff;
 
   :global(.container) > :global(.row) {
-    height: 84px;
+    height: 100%;
+  }
+
+  .bars {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+  }
+
+  .icon {
+    color: $primary;
+    display: none;
+
+    @media (max-width: 414px) {
+      padding-left: 0;
+      display: block;
+    }
   }
 
   .menu {
     display: flex;
     align-self: stretch;
 
+    @media (max-width: 414px) {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }    
+    
     ul {
       margin: 0;
       padding: 0;
@@ -45,6 +71,37 @@
 
       &.active {
         border-color: $text-color;
+      }
+    }
+
+    // responsive menu on mobile
+    
+    @media screen and (max-width: 414px) {
+      a {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      
+      ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 15px;
+
+        &.active {
+          display: block;
+        }
+
+      }
+      
+      li {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .searchbar {
+        padding-left: 0;
       }
     }
   }

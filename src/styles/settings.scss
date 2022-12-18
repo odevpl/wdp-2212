@@ -3,9 +3,15 @@ $orange: #d58e32;
 $gray: #363636;
 $darkerGray: #292929;
 $lighterGray: #434343;
+$lightestGray: #676767;
+$veryLightGray: #dfdfdf;
+$projectGold: #d58e32;
+$projectGoldLight: #d8ae77;
+$projectGoldDark: #d47f10;
+$elementGrayLight: #B6B6B6;
+
 
 // PLEASE DON"T USE VARIABLES ABOVE!
-
 
 $base-padding: 24px;
 
@@ -20,68 +26,51 @@ $primary: $orange;
 $text-color: $darkGray;
 
 $form-border-color: $darkerGray;
-$form-border-color: #292929;
 
+$brands-color: $veryLightGray;
+
+$login-main-color: $projectGold;
+$login-main-light: $projectGoldLight;
+$login-main-dark: $projectGoldDark;
+$blog-text-color: $lighterGray;
+
+$banner-group-bg: $gray;
+$banner-bottom: $elementGrayLight;
+
+// Edit animation duration below:
 
 $duration: 2s;
 
-$bounce: myAnim $duration ease 0s 1 normal forwards;
+// Animation data - DO NOT EDIT
+$bounce: bounce $duration ease 0s 1 normal forwards;
+$blink: blink $duration ease 0s 1 normal forwards;
 
-@keyframes myAnim {
-	0%,
-	50%,
-	100% {
-		opacity: 1;
-	}
+@keyframes bounce {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
 
-	25%,
-	75% {
-		opacity: 0;
-	}
+  25%,
+  75% {
+    opacity: 0;
+  }
 }
 
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+// Choose animation below
 
 $animation: $bounce;
-
-  
-@keyframes rotate {
-    0% {
-      -webkit-transform: rotate3d(0, 0, 1, 0deg);
-      transform: rotate3d(0, 0, 1, 0deg);
-    }
-    25% {
-      -webkit-transform: rotate3d(0, 0, 1, 90deg);
-      transform: rotate3d(0, 0, 1, 90deg);
-    }
-    50% {
-      -webkit-transform: rotate3d(0, 0, 1, 180deg);
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    75% {
-      -webkit-transform: rotate3d(0, 0, 1, 270deg);
-      transform: rotate3d(0, 0, 1, 270deg);
-    }
-    100% {
-      -webkit-transform: rotate3d(0, 0, 1, 360deg);
-      transform: rotate3d(0, 0, 1, 360deg);
-    }
-  }
-  
-  @keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }
-  
