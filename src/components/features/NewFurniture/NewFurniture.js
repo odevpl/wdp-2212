@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import shortid from 'shortid';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
@@ -22,7 +22,7 @@ class NewFurniture extends React.Component {
     const { categories, products, display } = this.props;
     const { activeCategory, activePage } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -36,8 +36,6 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
-    console.log('Viewport Size: ', display);
 
     return (
       <div className={styles.root}>

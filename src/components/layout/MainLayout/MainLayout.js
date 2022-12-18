@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
   const [amount, setAmount] = useState('');
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const sizing = () => {
     if (visualViewport.width > 821) {
       setViewportSize('desktop');
       setAmount(8);
@@ -26,28 +26,16 @@ const MainLayout = ({ children }) => {
       setViewportSize('mobile');
       setAmount(2);
     }
-    dispatch(setSize({ viewportSize, amount }));
-  }, [dispatch, viewportSize, amount]);
+  };
 
-  useEffect(
-    () =>
-      (visualViewport.onresize = () => {
-        if (window.innerWidth > 821) {
-          setViewportSize('desktop');
-          setAmount(8);
-        }
-        if (window.innerWidth > 415 && window.innerWidth < 821) {
-          setViewportSize('tablet');
-          setAmount(3);
-        }
-        if (window.innerWidth < 415) {
-          setViewportSize('mobile');
-          setAmount(2);
-        }
-        dispatch(setSize({ viewportSize, amount }));
-      }),
-    [amount, dispatch, viewportSize]
-  );
+  useEffect(() => {
+    sizing();
+    dispatch(setSize({ viewportSize, amount }));
+  });
+
+  visualViewport.onresize = () => {
+    sizing();
+  };
 
   return (
     <div>
