@@ -69,18 +69,20 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
-                className={
-                  (display === 'desktop' && 'col-3') ||
-                  (display === 'tablet' && 'col-4') ||
-                  (display === 'mobile' && 'col-6')
-                }
-              >
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * display.amount, (activePage + 1) * display.amount)
+              .map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    (display.viewportSize === 'desktop' && 'col-3') ||
+                    (display.viewportSize === 'tablet' && 'col-4') ||
+                    (display.viewportSize === 'mobile' && 'col-6')
+                  }
+                >
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -107,7 +109,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
-  display: PropTypes.string,
+  display: PropTypes.object,
 };
 
 NewFurniture.defaultProps = {

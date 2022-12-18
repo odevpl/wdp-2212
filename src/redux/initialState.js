@@ -401,6 +401,7 @@ const initialState = {
 
   display: {
     size: '',
+    amount: '',
   },
 };
 

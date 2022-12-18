@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { setSize } from '../../../redux/displaysizeRedux';
 import { useDispatch } from 'react-redux';
 
@@ -10,20 +10,44 @@ import { CompareBar } from '../../layout/CompareBar/CompareBar';
 
 const MainLayout = ({ children }) => {
   const [viewportSize, setViewportSize] = useState('');
+  const [amount, setAmount] = useState('');
   const dispatch = useDispatch();
 
-  visualViewport.onresize = () => {
-    if (window.innerWidth > 821) {
+  useEffect(() => {
+    if (visualViewport.width > 821) {
       setViewportSize('desktop');
+      setAmount(8);
     }
-    if (window.innerWidth > 415 && window.innerWidth < 821) {
+    if (visualViewport.width > 415 && window.innerWidth < 821) {
       setViewportSize('tablet');
+      setAmount(3);
     }
-    if (window.innerWidth < 415) {
+    if (visualViewport.width < 415) {
       setViewportSize('mobile');
+      setAmount(2);
     }
-  };
-  dispatch(setSize(viewportSize));
+    dispatch(setSize({ viewportSize, amount }));
+  }, [dispatch, viewportSize, amount]);
+
+  useEffect(
+    () =>
+      (visualViewport.onresize = () => {
+        if (window.innerWidth > 821) {
+          setViewportSize('desktop');
+          setAmount(8);
+        }
+        if (window.innerWidth > 415 && window.innerWidth < 821) {
+          setViewportSize('tablet');
+          setAmount(3);
+        }
+        if (window.innerWidth < 415) {
+          setViewportSize('mobile');
+          setAmount(2);
+        }
+        dispatch(setSize({ viewportSize, amount }));
+      }),
+    [amount, dispatch, viewportSize]
+  );
 
   return (
     <div>
