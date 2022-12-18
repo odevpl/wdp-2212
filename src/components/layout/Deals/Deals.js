@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Deals = ({ Deals }) => (
   <div className={`container ${styles.container}`}>
     <div className='row'>
-      <div className={`col-md-6 ${styles.column}`}>
+      <div className={`col-md-6 col-sm-12 ${styles.column}`}>
         <img src={Deals.sofa} alt='sofa' />
         <div className={styles.firstWrapper}>
           <h2>{Deals.info1a}</h2>
