@@ -4,7 +4,7 @@ import { useSwipeable } from 'react-swipeable';
 
 const Swipeable = ({ children, leftAction, rightAction }) => {
   const handlers = useSwipeable({
-    preventDefaultTouchmoveEvent: true,
+    preventDefaultTouchMoveEvent: true,
     trackTouch: true,
     trackMouse: true,
     rotationAngle: 0,

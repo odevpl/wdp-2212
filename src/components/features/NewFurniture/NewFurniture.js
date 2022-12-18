@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
+
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
@@ -10,29 +10,24 @@ class NewFurniture extends React.Component {
     activePage: 0,
     activeCategory: 'bed',
   };
-
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
   }
-
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
   }
-
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
-
     const categoryProducts = products.filter(item => item.category === activeCategory);
     const pagesCount = Math.ceil(categoryProducts.length / 8);
-
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li key={shortid()}>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage ? styles.active : undefined}
+            className={i === activePage && styles.active}
           >
             page {i}
           </a>
@@ -67,7 +62,6 @@ class NewFurniture extends React.Component {
                   <ul>
                     {categories.map(item => (
                       <li key={item.id}>
-                        {/* eslint-disable-next-line */}
                         <a
                           className={item.id === activeCategory && styles.active}
                           onClick={() => this.handleCategoryChange(item.id)}
