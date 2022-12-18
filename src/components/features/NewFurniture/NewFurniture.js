@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import shortid from 'shortid';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
@@ -19,12 +19,10 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, display } = this.props;
     const { activeCategory, activePage } = this.state;
-
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-
+    const pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -69,11 +67,20 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-6 col-sm-4 col-lg-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
+            {categoryProducts
+              .slice(activePage * display.amount, (activePage + 1) * display.amount)
+              .map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    (display.viewportSize === 'desktop' && 'col-3') ||
+                    (display.viewportSize === 'tablet' && 'col-4') ||
+                    (display.viewportSize === 'mobile' && 'col-6')
+                  }
+                >
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </div>
@@ -100,11 +107,13 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  display: PropTypes.object,
 };
 
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  display: [],
 };
 
 export default NewFurniture;

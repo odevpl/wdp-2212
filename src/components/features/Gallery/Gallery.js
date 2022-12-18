@@ -12,6 +12,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import shortid from 'shortid';
+
 const Gallery = () => {
   const products = useSelector(getAll);
   return (
@@ -86,7 +88,7 @@ const Gallery = () => {
             <Button variant='main'>&lt;</Button>
             <div className={styles.slider}>
               {products.map(product => (
-                <img key='1' src={`${product.photo}`} alt='furniture'></img>
+                <img key={shortid()} src={`${product.photo}`} alt='furniture'></img>
               ))}
             </div>
             <Button variant='main'>&gt;</Button>

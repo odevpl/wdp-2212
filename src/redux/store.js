@@ -8,6 +8,7 @@ import hotDealsReducer from './hotDealsRedux';
 import feedbackReducer from './feedbackRedux';
 import dealsReducer from './dealsRedux';
 import compareReducer from './compareListRedux';
+import displaysizeReducer from './displaysizeRedux';
 
 // define reducers
 const reducers = {
@@ -18,6 +19,7 @@ const reducers = {
   compareList: compareReducer,
   clientFeedback: feedbackReducer,
   deals: dealsReducer,
+  display: displaysizeReducer,
 };
 
 // add blank reducers for initial state properties without reducers
