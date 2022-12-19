@@ -1,6 +1,7 @@
 $darkGray: #2a2a2a;
 $orange: #d58e32;
 $gray: #363636;
+$white: #fff;
 $darkerGray: #292929;
 $lighterGray: #434343;
 $lightestGray: #676767;
@@ -36,6 +37,11 @@ $blog-text-color: $lighterGray;
 
 $banner-group-bg: $gray;
 $banner-bottom: $elementGrayLight;
+
+$register-btn-color-primary: $primary;
+$register-btn-color-secondary: $white;
+$register-btn-color-tertiary: $projectGoldDark;
+$register-input-color-primary: $darkerGray;
 
 // Edit animation duration below:
 
