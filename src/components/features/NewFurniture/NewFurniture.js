@@ -1,33 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
+import shortid from 'shortid';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
   };
+
   handlePageChange(newPage) {
     this.setState({ activePage: newPage });
   }
+
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
   }
+
+  toLeft = () => {
+    const activePage = this.state.activePage;
+    if (activePage > 0) {
+      this.setState({
+        ...this.state,
+        activePage: activePage - 1,
+      });
+    }
+  };
+
+  toRight = () => {
+    const activePage = this.state.activePage;
+    const maxPageIndex = this.pagesCount - 1;
+    if (activePage < maxPageIndex) {
+      this.setState({
+        ...this.state,
+        activePage: activePage + 1,
+      });
+    }
+  };
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    this.pagesCount = Math.ceil(categoryProducts.length / 8);
+
     const dots = [];
-    for (let i = 0; i < pagesCount; i++) {
+    for (let i = 0; i < this.pagesCount; i++) {
       dots.push(
-        <li key={i}>
+        <li key={shortid()}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -35,27 +61,13 @@ class NewFurniture extends React.Component {
       );
     }
 
-    const leftAction = () => {
-      this.setState({ activePage: activePage + 1 });
-      if (activePage >= pagesCount - 1) {
-        this.setState({ activePage: activePage });
-      }
-    };
-
-    const rightAction = () => {
-      this.setState({ activePage: activePage - 1 });
-      if (activePage <= 0) {
-        this.setState({ activePage: activePage });
-      }
-    };
-
     return (
-      <Swipeable rightAction={rightAction} leftAction={leftAction}>
+      <Swipeable leftAction={this.toLeft} rightAction={this.toRight}>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
               <div className='row no-gutters align-items-end'>
-                <div className={'col-auto ' + styles.heading}>
+                <div className={'col-sm-auto ' + styles.heading}>
                   <h3>New furniture</h3>
                 </div>
                 <div className={'col ' + styles.menu}>
@@ -63,7 +75,9 @@ class NewFurniture extends React.Component {
                     {categories.map(item => (
                       <li key={item.id}>
                         <a
-                          className={item.id === activeCategory && styles.active}
+                          className={
+                            item.id === activeCategory ? styles.active : undefined
+                          }
                           onClick={() => this.handleCategoryChange(item.id)}
                         >
                           {item.name}
@@ -72,7 +86,7 @@ class NewFurniture extends React.Component {
                     ))}
                   </ul>
                 </div>
-                <div className={'col-auto ' + styles.dots}>
+                <div className={'col-sm-auto ' + styles.dots}>
                   <ul>{dots}</ul>
                 </div>
               </div>
@@ -81,7 +95,7 @@ class NewFurniture extends React.Component {
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (
-                  <div key={item.id} className='col-3'>
+                  <div key={item.id} className='col-6 col-sm-4 col-lg-3'>
                     <ProductBox {...item} />
                   </div>
                 ))}
