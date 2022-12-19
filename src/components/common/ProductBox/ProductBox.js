@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { favoriteProduct } from '../../../redux/productsRedux';
 import Button from '../Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,6 +14,7 @@ import {
   removeFromCompareList,
 } from '../../../redux/compareListRedux';
 import { toggleCompare } from '../../../redux/productsRedux';
+import Stars from '../Stars/Stars';
 
 const ProductBox = ({
   name,
@@ -26,6 +23,7 @@ const ProductBox = ({
   promo,
   stars,
   photo,
+  userStars,
   favorite,
   id,
   compare,
@@ -47,7 +45,7 @@ const ProductBox = ({
     e.preventDefault();
     if (!compare) {
       if (compareList.length >= 4) {
-        return alert(`can't add more products to comprasion`);
+        return alert(`can't add more products to comparison`);
       } else {
         dispatch(toggleCompare(id));
         dispatch(
@@ -83,17 +81,7 @@ const ProductBox = ({
         <Link to={`/shop/${id}`}>
           <h5>{name}</h5>
         </Link>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <Stars stars={stars} userStars={userStars} id={id} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -138,6 +126,7 @@ ProductBox.propTypes = {
   compare: PropTypes.bool,
   photo: PropTypes.string,
   id: PropTypes.string,
+  userStars: PropTypes.number,
 };
 
 export default ProductBox;
