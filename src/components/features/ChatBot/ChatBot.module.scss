@@ -5,11 +5,15 @@
   background-color: $primary;
   text-align: center;
   height: 50px;
-  width: 55px;
-  border-radius: 3px;  
+  width: 150px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color: white;
   &:hover {
     cursor: pointer;
-    background-color: grey;
+    background-color: $projectGoldDark;
   }
 
   &.active {
@@ -21,7 +25,7 @@
 }
 .chat {
   position: fixed;
-  bottom: 50px;
+  bottom: 0;
   left: 25px;
   
   &.active {
@@ -67,5 +71,20 @@
       border-radius: 5px;
       margin: 5px 0;
       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;    }
+  }
+
+  .message {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      width: 100%;
+      background-color: $primary;
+
+      &:hover {
+        background-color: $projectGoldDark;
+
+      }
+    }
   }
 }
