@@ -22,11 +22,8 @@ const Homepage = () => (
     <DealsContainer />
     <NewFurniture />
     <Gallery />
-<<<<<<< HEAD
     <ChatBot />
-=======
     <MainBlog />
->>>>>>> 4798959 (Add components for posts)
     <Brands />
     <Feedback />
   </div>

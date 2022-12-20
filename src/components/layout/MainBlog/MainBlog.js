@@ -38,7 +38,9 @@ const MainBlog = () => {
         </div>
       </div>
       <div className={styles.root}>
-        {posts.slice(activePage * 3, (activePage + 1) * 3).map(post => (
+        {posts.slice(activePage * 3, (activePage + 1) * 3).map((
+          post // 3 comp. per page.
+        ) => (
           <BlogPost {...post} key={post.id} />
         ))}
       </div>
