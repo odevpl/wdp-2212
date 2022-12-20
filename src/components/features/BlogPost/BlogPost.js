@@ -7,18 +7,36 @@ import PropTypes from 'prop-types';
 
 const BlogPost = props => {
   return (
-    <div>
-      <img className={styles.photo} src={props.image} alt='furniture' />
-      <div className='row'>
-        <div className='col-6'>
-          <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon>
+    <div className={styles.root}>
+      <div className={styles.imageGroup}>
+        <img className={styles.photo} src={props.image} alt='furniture' />
+        <div className={styles.iconSectionWrapper}>
+          <div className={'row ' + styles.blogPostSubsection}>
+            <div className={styles.iconSection}>
+              <FontAwesomeIcon
+                className={styles.calendarIcon}
+                icon={faCalendar}
+              ></FontAwesomeIcon>
+              <p>{props.date}</p>
+            </div>
+            <div className={styles.iconSection}>
+              <FontAwesomeIcon icon={faComment}></FontAwesomeIcon>
+              <p>{props.comments}</p>
+            </div>
+          </div>
         </div>
-        <div className='col-6'>
-          <FontAwesomeIcon icon={faComment}></FontAwesomeIcon>
-        </div>
-        <div className={styles.buttonMainBlog}>
-          <Button variant='medium'>Read More</Button>
-        </div>
+      </div>
+      <div className={props.selected ? ' ' + styles.blogActiveTitle : styles.blogTitle}>
+        {props.title}
+      </div>
+      <div className={styles.blogParagraph}>{props.description}</div>
+      <div className={styles.buttonMainBlog}>
+        <Button
+          className={props.selected ? ' ' + styles.buttonActive : styles.button}
+          variant='medium'
+        >
+          Read More
+        </Button>
       </div>
     </div>
   );
@@ -27,6 +45,11 @@ const BlogPost = props => {
 BlogPost.propTypes = {
   id: PropTypes.string,
   image: PropTypes.string,
+  date: PropTypes.string,
+  comments: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  selected: PropTypes.string,
 };
 
 export default BlogPost;

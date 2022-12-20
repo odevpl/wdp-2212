@@ -10,32 +10,93 @@ const initialState = {
   posts: [
     {
       id: 'post1',
+      selected: true,
       comments: '4 Comments',
-      date: 'June 4 2022',
+      date: '4 Jun 2022',
       title: 'Products That Fight Static',
       description:
         'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
-      image:
-        'https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg',
     },
     {
       id: 'post2',
+      selected: false,
       comments: '4 Comments',
-      date: 'March 2 2022',
+      date: '2 Mar 2022',
       title: 'Products That Fight Static',
       description:
         'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
-      image: 'https://images.pexels.com/photos/1813502/pexels-photo-1813502.jpeg',
+      image: 'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg',
     },
     {
       id: 'post3',
+      selected: false,
       comments: '4 Comments',
-      date: 'May 3 2022',
+      date: '3 May 2022',
       title: 'Products That Fight Static',
       description:
         'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
-      image:
-        'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg',
+    },
+    {
+      id: 'post4',
+      selected: true,
+      comments: '4 Comments',
+      date: '27 Mar 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/220749/pexels-photo-220749.jpeg',
+    },
+    {
+      id: 'post5',
+      selected: false,
+      comments: '4 Comments',
+      date: '11 Sep 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/279645/pexels-photo-279645.jpeg',
+    },
+    {
+      id: 'post6',
+      selected: false,
+      comments: '4 Comments',
+      date: '15 Feb 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/133919/pexels-photo-133919.jpeg',
+    },
+    {
+      id: 'post7',
+      selected: true,
+      comments: '4 Comments',
+      date: '4 Oct 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg',
+    },
+    {
+      id: 'post8',
+      selected: false,
+      comments: '4 Comments',
+      date: '2 Jul 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/90319/pexels-photo-90319.jpeg',
+    },
+    {
+      id: 'post9',
+      selected: false,
+      comments: '4 Comments',
+      date: '4 Dec 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/1668860/pexels-photo-1668860.jpeg',
     },
   ],
   hotDeals: [
