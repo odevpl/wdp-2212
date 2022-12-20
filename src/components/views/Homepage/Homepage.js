@@ -11,6 +11,7 @@ import Promotion from '../../features/Promotion/Promotion';
 import DealsContainer from '../../layout/Deals/DealsContainer';
 import { Feedback } from '../../features/Feedback/Feedback';
 import Gallery from '../../features/Gallery/Gallery';
+import ChatBot from '../../features/ChatBot/ChatBot';
 
 const Homepage = () => (
   <div className={styles.root}>
@@ -20,6 +21,7 @@ const Homepage = () => (
     <DealsContainer />
     <NewFurniture />
     <Gallery />
+    <ChatBot />
     <Brands />
     <Feedback />
   </div>
