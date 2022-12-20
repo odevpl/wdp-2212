@@ -4,7 +4,6 @@ import { getAllPosts } from '../../../redux/blogPostsRedux';
 import BlogPost from '../../features/BlogPost/BlogPost';
 import styles from '../../layout/MainBlog/MainBlog.module.scss';
 import Container from '../../common/Container/Container';
-import shortid from 'shortid';
 
 const MainBlog = () => {
   const posts = useSelector(getAllPosts);
