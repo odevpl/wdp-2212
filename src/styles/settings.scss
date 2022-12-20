@@ -9,8 +9,8 @@ $veryLightGray: #dfdfdf;
 $projectGold: #d58e32;
 $projectGoldLight: #d8ae77;
 $projectGoldDark: #d47f10;
-$elementGrayLight: #B6B6B6;
-
+$elementGrayLight: #b6b6b6;
+$veryLightOrange: #faebd7;
 
 // PLEASE DON"T USE VARIABLES ABOVE!
 
@@ -42,6 +42,11 @@ $register-btn-color-primary: $primary;
 $register-btn-color-secondary: $white;
 $register-btn-color-tertiary: $projectGoldDark;
 $register-input-color-primary: $darkerGray;
+
+$modal-popup-primary: $primary;
+$modal-popup-secondary: $veryLightGray;
+$modal-popup-tertiary: $veryLightGray;
+$modal-popup-quaternary: $veryLightOrange;
 
 $blog-white: $white;
 
