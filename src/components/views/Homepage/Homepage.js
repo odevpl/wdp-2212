@@ -1,5 +1,6 @@
 import React from 'react';
 import Brands from '../../layout/Brands/Brands';
+import MainBlog from '../../layout/MainBlog/MainBlog';
 import Banner from '../../features/Banner/Banner';
 // import PropTypes from 'prop-types';
 
@@ -22,6 +23,7 @@ const Homepage = () => (
     <NewFurniture />
     <Gallery />
     <ChatBot />
+    <MainBlog />
     <Brands />
     <Feedback />
   </div>
