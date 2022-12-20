@@ -18,7 +18,7 @@
     position: absolute;
     bottom: 0px;
     z-index: 1;
-    background-color: white;
+    background-color: $blog-white;
     display: flex;
     justify-content: space-between;
     width: 300px;
@@ -77,9 +77,9 @@
 
     .button {
         margin: 0 auto;
-        background-color: black; /* Green */
+        background-color: black; 
         border: none;
-        color: white;
+        color: $blog-white;
         padding: 4px 28px;
         text-align: center;
         text-decoration: none;
@@ -89,9 +89,9 @@
 
    .buttonActive { 
         margin: 0 auto;
-        background-color: $login-main-dark; /* Green */
+        background-color: $login-main-dark;
         border: none;
-        color: white;
+        color: $blog-white;
         padding: 4px 28px;
         text-align: center;
         text-decoration: none;
