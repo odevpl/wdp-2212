@@ -4,7 +4,6 @@ import shortid from 'shortid';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import Swipeable from '../../common/Swipeable/Swipeable';
-import shortid from 'shortid';
 
 class NewFurniture extends React.Component {
   state = {
@@ -20,35 +19,15 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  toLeft = () => {
-    const activePage = this.state.activePage;
-    if (activePage > 0) {
-      this.setState({
-        ...this.state,
-        activePage: activePage - 1,
-      });
-    }
-  };
-
-  toRight = () => {
-    const activePage = this.state.activePage;
-    const maxPageIndex = this.pagesCount - 1;
-    if (activePage < maxPageIndex) {
-      this.setState({
-        ...this.state,
-        activePage: activePage + 1,
-      });
-    }
-  };
-
   render() {
     const { categories, products, display } = this.props;
     const { activeCategory, activePage } = this.state;
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
-    this.pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
+    const pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
+
     const dots = [];
-    for (let i = 0; i < this.pagesCount; i++) {
+    for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li key={shortid()}>
           <a
@@ -61,8 +40,22 @@ class NewFurniture extends React.Component {
       );
     }
 
+    const leftAction = () => {
+      this.setState({ activePage: activePage + 1 });
+      if (activePage >= pagesCount - 1) {
+        this.setState({ activePage: activePage });
+      }
+    };
+
+    const rightAction = () => {
+      this.setState({ activePage: activePage - 1 });
+      if (activePage <= 0) {
+        this.setState({ activePage: activePage });
+      }
+    };
+
     return (
-      <Swipeable leftAction={this.toLeft} rightAction={this.toRight}>
+      <Swipeable rightAction={rightAction} leftAction={leftAction}>
         <div className={styles.root}>
           <div className='container'>
             <div className={styles.panelBar}>
@@ -91,21 +84,22 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * display.amount, (activePage + 1) * display.amount)
-              .map(item => (
-                <div
-                  key={item.id}
-                  className={
-                    (display.viewportSize === 'desktop' && 'col-3') ||
-                    (display.viewportSize === 'tablet' && 'col-4') ||
-                    (display.viewportSize === 'mobile' && 'col-6')
-                  }
-                >
-                  <ProductBox {...item} />
-                </div>
-              ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * display.amount, (activePage + 1) * display.amount)
+                .map(item => (
+                  <div
+                    key={item.id}
+                    className={
+                      (display.viewportSize === 'desktop' && 'col-3') ||
+                      (display.viewportSize === 'tablet' && 'col-4') ||
+                      (display.viewportSize === 'mobile' && 'col-6')
+                    }
+                  >
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </Swipeable>

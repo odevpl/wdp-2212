@@ -1,32 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Swipeable.module.scss';
+import { useSwipeable } from 'react-swipeable';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-
-const Swipeable = ({ leftAction, rightAction, children }) => (
-  <div className={styles.root}>
-    <div className={styles.icons}>
-      <FontAwesomeIcon
-        className={styles.icon}
-        icon={faChevronLeft}
-        onClick={leftAction}
-      />
-      <FontAwesomeIcon
-        className={styles.icon}
-        icon={faChevronRight}
-        onClick={rightAction}
-      />
-    </div>
-    {children}
-  </div>
-);
+const Swipeable = ({ children, leftAction, rightAction }) => {
+  const handlers = useSwipeable({
+    preventDefaultTouchmoveEvent: true,
+    trackTouch: true,
+    trackMouse: true,
+    rotationAngle: 0,
+    onSwipedLeft: () => leftAction(),
+    onSwipedRight: () => rightAction(),
+  });
+  return <div {...handlers}>{children}</div>;
+};
+export default Swipeable;
 
 Swipeable.propTypes = {
+  children: PropTypes.node,
   leftAction: PropTypes.func,
   rightAction: PropTypes.func,
-  children: PropTypes.node,
 };
-
-export default Swipeable;
