@@ -7,6 +7,37 @@ const initialState = {
     { id: 'dining', name: 'Dining' },
   ],
 
+  posts: [
+    {
+      id: 'post1',
+      comments: '4 Comments',
+      date: 'June 4 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image:
+        'https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+    {
+      id: 'post2',
+      comments: '4 Comments',
+      date: 'March 2 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image: 'https://images.pexels.com/photos/1813502/pexels-photo-1813502.jpeg',
+    },
+    {
+      id: 'post3',
+      comments: '4 Comments',
+      date: 'May 3 2022',
+      title: 'Products That Fight Static',
+      description:
+        'If everyone used the identical lorem ipsum copy, search engines would flag it for plagiarism and downgrade the site for its lack of helpful content for the reader.',
+      image:
+        'https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    },
+  ],
   hotDeals: [
     {
       id: 'aenean-ru-bristique-12',
