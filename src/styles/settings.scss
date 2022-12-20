@@ -80,3 +80,9 @@ $blink: blink $duration ease 0s 1 normal forwards;
 // Choose animation below
 
 $animation: $bounce;
+
+$fade-time: 500ms;
+
+:export {
+  fadeTime: $fade-time;
+}
