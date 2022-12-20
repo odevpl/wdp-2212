@@ -17,11 +17,11 @@ const Brands = props => {
     <Container>
       <div className={styles.brandsSection}>
         <div className={styles.brandsWrapper}>
-          <BrandsButton arrowDirection={faChevronLeft} />
-          {brands.map(brand => (
-            <Brand {...brand} key={brand.id} />
-          ))}
-          <BrandsButton arrowDirection={faChevronRight} />
+            <BrandsButton arrowDirection={faChevronLeft} />
+                {brands.map(brand => (
+                  <Brand {...brand} key={brand.id} />
+                ))}
+            <BrandsButton arrowDirection={faChevronRight} />
         </div>
       </div>
     </Container>
