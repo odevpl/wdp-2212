@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
@@ -15,6 +15,7 @@ import {
 } from '../../../redux/compareListRedux';
 import { toggleCompare } from '../../../redux/productsRedux';
 import Stars from '../Stars/Stars';
+import { Modal } from 'react-bootstrap';
 
 const ProductBox = ({
   name,
@@ -27,6 +28,7 @@ const ProductBox = ({
   favorite,
   id,
   compare,
+  category,
 }) => {
   const dispatch = useDispatch();
   const compareList = useSelector(getCompareList);
@@ -63,15 +65,58 @@ const ProductBox = ({
     }
   };
 
+  // popup Modal buttons
+  const [show, setShow] = useState(false);
+  const hideModal = () => setShow(false);
+  const handleModalOpen = e => {
+    e.preventDefault();
+    setShow(true);
+  };
+
   return (
     <div className={styles.root}>
+      <Modal
+        className={styles.popupModal}
+        show={show}
+        onHide={hideModal}
+        animation={false}
+        centered
+      >
+        <Modal.Header className={styles.popupHeader} closeButton>
+          <Modal.Title>{name}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className={styles.popupBody}>
+          <div className={styles.popupImgBox}>
+            <img className={styles.popupImg} src={photo} alt='furniture'></img>
+          </div>
+          <div className={styles.popupInfoBox}>
+            <div>
+              {oldPrice ? (
+                <p>
+                  Old Price: <span className={styles.popupOldPrice}>{oldPrice}$</span>
+                </p>
+              ) : (
+                ''
+              )}
+              <p className={styles.popupPrice}>Price: {price}$</p>
+              <p>Category: {category}</p>
+              <p>Rating: {stars}/5</p>
+              {userStars ? <p>Your rating: {userStars}/5</p> : ''}
+              {promo ? <p className={styles.popupPromo}>Promotion: {promo}</p> : ''}
+            </div>
+          </div>
+        </Modal.Body>
+      </Modal>
+
       <div className={styles.photo}>
         <Link to={`/shop/${id}`}>
           <img src={photo} alt='furniture' />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button variant='small' onClick={handleModalOpen}>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -127,6 +172,7 @@ ProductBox.propTypes = {
   photo: PropTypes.string,
   id: PropTypes.string,
   userStars: PropTypes.number,
+  category: PropTypes.string,
 };
 
 export default ProductBox;

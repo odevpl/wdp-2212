@@ -108,3 +108,53 @@
 .compare {
   color: $primary;
 }
+
+.popupModal {
+  .popupHeader {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: $modal-popup-primary;
+
+    * {
+      padding: 5px;
+      margin: 0 10px 0 0;
+    }
+
+    button {
+      order: -1;
+    }
+  }
+}
+
+.popupBody {
+  background-color: $modal-popup-tertiary;
+  display: flex;
+  height: 300px;
+
+  .popupImgBox {
+    flex-basis: 50%;
+    border: 2px solid $modal-popup-primary;
+    padding: 5px;
+    .popupImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .popupInfoBox {
+    margin-left: 5px;
+    padding: 5px;
+    background-color: $modal-popup-quaternary;
+    flex-basis: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .popupOldPrice {
+      text-decoration-line: line-through;
+      color: $lightestGray;
+    }
+  }
+}
