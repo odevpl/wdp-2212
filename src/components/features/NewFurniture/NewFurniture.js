@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes, { func } from 'prop-types';
 import shortid from 'shortid';
+import clsx from 'clsx';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import scssVariables from '../../../styles/settings.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
+
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    fade: true,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ fade: false });
+    setTimeout(() => {
+      this.setState({ activePage: newPage });
+      this.setState({ fade: true });
+    }, parseInt(scssVariables.fadeTime));
   }
 
   handleCategoryChange(newCategory) {
@@ -21,7 +29,8 @@ class NewFurniture extends React.Component {
 
   render() {
     const { categories, products, display } = this.props;
-    const { activeCategory, activePage } = this.state;
+    const { activeCategory, activePage, fade } = this.state;
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
     const pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
@@ -84,22 +93,22 @@ class NewFurniture extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='row'>
-              {categoryProducts
-                .slice(activePage * display.amount, (activePage + 1) * display.amount)
-                .map(item => (
-                  <div
-                    key={item.id}
-                    className={
-                      (display.viewportSize === 'desktop' && 'col-3') ||
-                      (display.viewportSize === 'tablet' && 'col-4') ||
-                      (display.viewportSize === 'mobile' && 'col-6')
-                    }
-                  >
-                    <ProductBox {...item} />
-                  </div>
-                ))}
-            </div>
+          </div>
+          <div className={clsx('row', fade ? styles.fadeIn : styles.fadeOut)}>
+            {categoryProducts
+              .slice(activePage * display.amount, (activePage + 1) * display.amount)
+              .map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    (display.viewportSize === 'desktop' && 'col-3') ||
+                    (display.viewportSize === 'tablet' && 'col-4') ||
+                    (display.viewportSize === 'mobile' && 'col-6')
+                  }
+                >
+                  <ProductBox {...item} />
+                </div>
+              ))}
           </div>
         </div>
       </Swipeable>
