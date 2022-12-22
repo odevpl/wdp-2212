@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './BrandsButton.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Brands = props => {
+const BrandsButton = props => {
   return (
     <button className={styles.brandsButton}>
       <FontAwesomeIcon
@@ -14,10 +14,10 @@ const Brands = props => {
   );
 };
 
-Brands.propTypes = {
+BrandsButton.propTypes = {
   image: PropTypes.string,
   children: PropTypes.node,
   arrowDirection: PropTypes.object,
 };
 
-export default Brands;
+export default BrandsButton;
