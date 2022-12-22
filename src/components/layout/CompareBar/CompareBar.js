@@ -9,7 +9,7 @@ import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 
 export const CompareBar = () => {
   const dispatch = useDispatch();
-  const compareList = useSelector(getCompareList);
+  let compareList = useSelector(getCompareList);
 
   const handleRemoveFomCompareList = (e, item) => {
     e.preventDefault();
@@ -38,6 +38,14 @@ export const CompareBar = () => {
                     icon={faTimesCircle}
                     className={styles.removeIcon}
                   ></FontAwesomeIcon>
+                </div>
+                <div className={styles.textBox}>
+                  <p>{item.name}</p>
+                  {item.oldPrice && (
+                    <p className={styles.oldPrice}>old price: {item.oldPrice}$</p>
+                  )}
+                  <p>price: {item.price}$</p>
+                  {item.favorite && <p>Your favorite!</p>}
                 </div>
               </div>
             ))}
