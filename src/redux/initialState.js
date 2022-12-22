@@ -488,6 +488,36 @@ const initialState = {
       alt: 'pict-6',
       image: 'https://imgur.com/ioTN2D4.jpg',
     },
+    {
+      id: 'item-7',
+      alt: 'pict-6',
+      image: 'https://imgur.com/M0vcrFI.jpg',
+    },
+    {
+      id: 'item-8',
+      alt: 'pict-5',
+      image: 'https://imgur.com/8WlFg6T.jpg',
+    },
+    {
+      id: 'item-9',
+      alt: 'pict-4',
+      image: 'https://imgur.com/M0vcrFI.jpg',
+    },
+    {
+      id: 'item-10',
+      alt: 'pict-3',
+      image: 'https://imgur.com/8WlFg6T.jpg',
+    },
+    {
+      id: 'item-11',
+      alt: 'pict-2',
+      image: 'https://imgur.com/mI34Zer.jpg',
+    },
+    {
+      id: 'item-12',
+      alt: 'pict-1',
+      image: 'https://imgur.com/V5aHrvU.jpg',
+    },
   ],
   cart: {
     products: [],

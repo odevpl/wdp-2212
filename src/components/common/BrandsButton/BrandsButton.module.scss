@@ -1,11 +1,13 @@
 @import "../../../styles/settings.scss";
 
 .brandsButton {
-    width: 30px;
-    background-color: black;
+    width: 15px;
+    background-color: $text-color;
+    border: none;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding-right: 15px;
     // margin-left: 10px;
     // margin-right: 10px;
 }

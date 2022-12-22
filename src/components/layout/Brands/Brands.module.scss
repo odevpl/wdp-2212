@@ -18,3 +18,11 @@
     border-top: 1px solid $brands-color;
     border-bottom: 1px solid $brands-color;
 }
+
+.brandbutton {
+        width: 35px;
+        background-color: $text-color;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+}
