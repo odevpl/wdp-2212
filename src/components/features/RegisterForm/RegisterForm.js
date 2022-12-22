@@ -10,34 +10,34 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-const formSchema = yup
-  .object()
-  .shape({
-    firstName: yup
-      .string()
-      .min(3, 'First name cannot be shorter than 3 characters')
-      .max(30, 'First name cannot be longer than 30 characters'),
-    lastName: yup
-      .string()
-      .min(3, 'Last name cannot be shorter than 3 characters')
-      .max(30, 'Last name cannot be longer than 30 characters'),
-    email: yup
-      .string()
-      .email('Email is required')
-      .required(),
-    password: yup
-      .string()
-      .min(3, 'The password cannot be shorter than 3 characters')
-      .required(),
-    confirmPassword: yup
-      .string()
-      .min(3, 'The password cannot be shorter than 3 characters')
-      .oneOf([yup.ref('password'), null], 'Passwords must match')
-      .required(),
-  })
-  .required();
-
 const RegisterForm = () => {
+  const formSchema = yup
+    .object()
+    .shape({
+      firstName: yup
+        .string()
+        .min(3, 'First name cannot be shorter than 3 characters')
+        .max(30, 'First name cannot be longer than 30 characters'),
+      lastName: yup
+        .string()
+        .min(3, 'Last name cannot be shorter than 3 characters')
+        .max(30, 'Last name cannot be longer than 30 characters'),
+      email: yup
+        .string()
+        .email('Email is required')
+        .required(),
+      password: yup
+        .string()
+        .min(3, 'The password cannot be shorter than 3 characters')
+        .required(),
+      confirmPassword: yup
+        .string()
+        .min(3, 'The password cannot be shorter than 3 characters')
+        .oneOf([yup.ref('password'), null], 'Passwords must match')
+        .required(),
+    })
+    .required();
+
   const history = useHistory();
   const {
     register,
@@ -97,7 +97,7 @@ const RegisterForm = () => {
     <div className={styles.registerBox}>
       <div className={styles.innerBox}>
         <b>Podaj dane do rejestracji</b>
-        <form className={styles.form} onSubmit={handleSubmit(onSubmitHandler)}>
+        <form className={styles.form}>
           <div className={styles.radioBtns}>
             <div>
               <input type='radio' id='gotAcc' name='accOptions'></input>
@@ -115,7 +115,7 @@ const RegisterForm = () => {
               placeholder='First Name'
             />
             <small className={errors.firstName ? styles.errorMessage : ''}>
-              {errors.firstName?.message}
+              {errors.firstName && errors.firstName.message}
             </small>
 
             <input
@@ -124,7 +124,7 @@ const RegisterForm = () => {
               placeholder='Last Name'
             />
             <small className={errors.lastName ? styles.errorMessage : ''}>
-              {errors.lastName?.message}
+              {errors.lastName && errors.lastName.message}
             </small>
 
             <input
@@ -133,7 +133,7 @@ const RegisterForm = () => {
               placeholder='Email *'
             />
             <small className={errors.email ? styles.errorMessage : ''}>
-              {errors.email?.message}
+              {errors.email && errors.email.message}
             </small>
 
             <input
@@ -143,7 +143,7 @@ const RegisterForm = () => {
               placeholder='Password *'
             />
             <small className={errors.password ? styles.errorMessage : ''}>
-              {errors.password?.message}
+              {errors.password && errors.password.message}
             </small>
 
             <input
@@ -153,7 +153,7 @@ const RegisterForm = () => {
               placeholder='Confirm Password *'
             />
             <small className={errors.confirmPassword ? styles.errorMessage : ''}>
-              {errors.confirmPassword?.message}
+              {errors.confirmPassword && errors.confirmPassword.message}
             </small>
           </div>
 
@@ -199,7 +199,11 @@ const RegisterForm = () => {
               <button className={styles.previousBtn}>Wróć</button>
             </Link>
             <Link to='/'>
-              <button className={styles.submitBtn} type='submit' onClick={formSchema}>
+              <button
+                className={styles.submitBtn}
+                type='submit'
+                onClick={handleSubmit(onSubmitHandler)}
+              >
                 Zarejestruj się
               </button>
             </Link>
