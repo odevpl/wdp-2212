@@ -1,0 +1,131 @@
+@import "../../../styles/settings.scss";
+
+.form {
+  padding: 40px;
+
+  .radioBtns {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+
+    input {
+      margin-right: 10px;
+      appearance: none;
+      font: inherit;
+      color: $register-input-color-primary;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $register-input-color-primary;
+      border-radius: 50%;
+      transform: translateY(-3px);
+      display: inline-grid;
+      place-content: center;
+    }
+
+    input::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      background-color: $register-input-color-primary;
+    }
+
+    input:checked::before {
+      transform: scale(1);
+    }
+
+    label {
+      margin: 0;
+    }
+  }
+
+  .userData {
+    margin-top: 50px;
+    input {
+      display: block;
+      margin-top: 25px;
+      padding: 5px;
+      width: 100%;
+    }
+  }
+
+  .switch {
+    margin-top: 25px;
+    display: block;
+    text-align: right;
+  }
+
+  .checkboxBtns {
+    div {
+      margin-bottom: 20px;
+    }
+
+    input {
+      display: none;
+
+      & + *::before {
+        margin-right: 15px;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: $register-input-color-primary;
+        transform: translateY(-2px);
+      }
+
+      &:checked + *::before {
+        content: "✓";
+        color: $white;
+        line-height: 17px;
+        text-align: center;
+        background: $register-btn-color-primary;
+        border-color: $register-input-color-primary;
+      }
+    }
+
+    span {
+      color: $register-btn-color-primary;
+    }
+  }
+
+  small {
+    color: $errorMsg;
+  }
+
+  .formButtons {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .previousBtn {
+      border: none;
+      color: $register-btn-color-primary;
+      background-color: transparent;
+
+      &:hover {
+        color: $register-btn-color-tertiary;
+      }
+    }
+
+    .submitBtn {
+      padding: 10px 15px;
+      background-color: $register-btn-color-primary;
+      color: $register-btn-color-secondary;
+      border: 2px solid $register-btn-color-primary;
+      border-radius: 5px;
+      &:hover {
+        color: $register-btn-color-primary;
+        background-color: $register-btn-color-secondary;
+        border: 2px solid $register-btn-color-primary;
+      }
+    }
+  }
+}
