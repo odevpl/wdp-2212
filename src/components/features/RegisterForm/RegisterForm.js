@@ -23,7 +23,7 @@ const formSchema = yup
       .max(30, 'Last name cannot be longer than 30 characters'),
     email: yup
       .string()
-      .email('')
+      .email('Email is required')
       .required(),
     password: yup
       .string()
