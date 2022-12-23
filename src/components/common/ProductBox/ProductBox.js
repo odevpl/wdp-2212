@@ -16,6 +16,7 @@ import {
 import { toggleCompare } from '../../../redux/productsRedux';
 import Stars from '../Stars/Stars';
 import { Modal } from 'react-bootstrap';
+import { changeComparedProductFavoriteStatus } from '../../../redux/compareListRedux';
 
 const ProductBox = ({
   name,
@@ -41,6 +42,7 @@ const ProductBox = ({
 
   const handleClickFavorite = id => {
     dispatch(favoriteProduct(id));
+    dispatch(changeComparedProductFavoriteStatus(id));
   };
 
   const handleAddToCompare = e => {
@@ -56,6 +58,8 @@ const ProductBox = ({
             name,
             price,
             photo,
+            favorite,
+            oldPrice,
           })
         );
       }
