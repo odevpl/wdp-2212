@@ -209,3 +209,51 @@
 .oldPrice {
   text-decoration: line-through;
 }
+
+@media (max-width: 1000px) {
+  .price {
+    width: 80px;
+    height: 80px;
+  }
+  .name {
+    height: 100px;
+    width: 175px;
+  }
+  .buttons {
+    margin-left: 10px;
+    top: 40%;
+    a {
+      margin: 3px;
+    }
+  }
+  .stars {
+    a {
+      width: 5px;
+      height: 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .offer {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 320px) {
+  .price {
+    width: 50px;
+    height: 50px;
+  }
+  .name {
+    height: 70px;
+    width: 100px;
+  }
+  .buttons {
+    margin-left: 5px;
+    top: 40%;
+    a {
+      margin: 1px;
+    }
+  }
+}

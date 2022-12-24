@@ -3,3 +3,25 @@
 .brandElement {
     padding: 14px;
 }
+
+@media (max-width: 1199px) {
+    .brandElement {
+        padding: 10px;
+    }
+  }
+  @media (max-width: 991px) {
+    .brandElement {
+        padding: 6px;
+    }
+  }
+  @media (max-width: 767px) {
+    .brandElement {
+        padding: 4px;
+    }
+  }
+  @media (max-width: 511px) {
+    .brandElement {
+        padding: 2px;
+      
+    }
+  }
