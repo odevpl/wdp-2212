@@ -19,7 +19,7 @@ const Gallery = () => {
   return (
     <div className='container'>
       <div className='row'>
-        <div className='col-6'>
+        <div className='col-12 col-md-6 pl-0'>
           <div className={styles.heading}>
             <h3>Furniture Gallery</h3>
           </div>

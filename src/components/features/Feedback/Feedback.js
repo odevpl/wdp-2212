@@ -4,7 +4,7 @@ import styles from './Feedback.module.scss';
 import { getClientFeedback } from '../../../redux/feedbackRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
-//import Swipeable from '...'
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 export const Feedback = () => {
   const feedbackList = useSelector(getClientFeedback);
@@ -26,7 +26,7 @@ export const Feedback = () => {
     );
   }
 
-  /*const leftAction = () => {
+  const leftAction = () => {
     handleSetActivePage(activePage +1);
     if(activePage >= 0 (feedbackList) -1) {
       handleSetActivePage(activePage);
@@ -38,10 +38,10 @@ export const Feedback = () => {
     if(activePage <= 0) {
       handleSetActivePage(activePage);
     }
-  };*/
+  };
 
   return (
-    // <Swipeable rightAction={rightAction} leftAction={leftAction}>
+<Swipeable rightAction={rightAction} leftAction={leftAction}>
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.panelBar}>
@@ -82,6 +82,6 @@ export const Feedback = () => {
         </div>
       </div>
     </div>
-    //</Swipeable>
+    </Swipeable>
   );
 };
