@@ -16,6 +16,14 @@ import {
   faHeart,
   faEnvelope,
 } from '@fortawesome/free-regular-svg-icons';
+import {
+  faTwitter,
+  faFacebookF,
+  faYoutube,
+  faGooglePlusG,
+  faLinkedin,
+  faPinterestP,
+} from '@fortawesome/free-brands-svg-icons';
 import { getProductById } from '../../../redux/productsRedux';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
@@ -58,13 +66,26 @@ const ProductPage = props => {
           <div className={styles.largeImage}>
             <img src={product.photo} alt={product.name} />
           </div>
+          <div className={styles.smallGallery}>
+            <Button variant='small' className={styles.iconTransparent + ' ' + styles.smallGalleryButtonLeft}>
+              <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+            </Button>
+            <img src={'https://loremflickr.com/100/110'} className={styles.gallerySmallImage} alt={product.name} />
+            <img src={'https://loremflickr.com/100/110'} className={styles.gallerySmallImage} alt={product.name} />
+            <img src={'https://loremflickr.com/100/110'} className={styles.gallerySmallImage} alt={product.name} />
+            <img src={'https://loremflickr.com/100/110'} className={styles.gallerySmallImage} alt={product.name} />
+            <Button variant='small' className={styles.iconTransparent + ' ' + styles.smallGalleryButtonRight}>
+              <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+            </Button>
+          </div>
+          
         </div>
         <div className={styles.productDetails}>
           <div className={styles.titleSection}>
             <div>
               <h2>{product.name}</h2>
             </div>
-            <div>
+            <div className={styles.titleButtonSection}>
               <Button variant='small' className={styles.iconTransparent}>
                 <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
               </Button>
@@ -72,12 +93,11 @@ const ProductPage = props => {
                 <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
               </Button>
             </div>
-            
           </div>
           <div className={styles.favoriteSection}>
             {stars.map(item => item)} <span>(0 review) Add Your Review</span>
           </div>
-          <div className={styles.price}>
+          <div className={styles.price + ' ' + styles.priceSection}>
             <div className={styles.price}>
               {checkOldPrice()}
               <Button noHover variant='small'>
@@ -108,6 +128,38 @@ const ProductPage = props => {
             <Button variant='small' className={styles.iconTransparent}>
               <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
             </Button>
+          </div>
+          <div className={styles.overviewSection}>
+            <div><b>Quick Overview</b></div>
+            <p>Polskie słowa są zazwyczaj dużo dłuższe, niż angielskie czy łacińskie. Ma to ogromny wpływ na wygląd nagłówków czy łamanie się tekstu w węższych kolumnach. Do tego mnogość ogonków nad i pod literami sprawia, że inaczej wygląda odstęp między liniami.</p>
+          </div>
+          <div className={styles.availbilitySection}>
+            <div className={styles.availbilityPoints}>
+              <b>Availability: </b> <p>In Stock</p>
+            </div>
+            <div className={styles.availbilityPoints}>
+              <b>Category: </b> <p>Furniture</p>
+            </div>
+          </div>
+          <div className={styles.socialSection}>
+            <button variant='small' className={styles.iconSocialFacebook}>
+              <FontAwesomeIcon icon={faFacebookF} className={styles.facebook}></FontAwesomeIcon> Share
+            </button>
+            <button variant='small' className={styles.iconSocialYT}>
+              <FontAwesomeIcon icon={faYoutube} className={styles.youtube}></FontAwesomeIcon> Youtube
+            </button>
+            <button variant='small' className={styles.iconSocialGoogle}>
+              <FontAwesomeIcon icon={faGooglePlusG} className={styles.google}></FontAwesomeIcon> Google+
+            </button>
+            <button variant='small' className={styles.iconSocialTwitter}>
+              <FontAwesomeIcon icon={faTwitter} className={styles.twitter}></FontAwesomeIcon> Tweet
+            </button>
+            <button variant='small' className={styles.iconSocialPinterest}>
+              <FontAwesomeIcon icon={faPinterestP} className={styles.pinterest}></FontAwesomeIcon> Pinterest
+            </button>
+            <button variant='small' className={styles.iconSocialLinkedin}>
+              <FontAwesomeIcon icon={faLinkedin} className={styles.linkedin}></FontAwesomeIcon> Linkedin
+            </button>
           </div>
         </div>
       </div>

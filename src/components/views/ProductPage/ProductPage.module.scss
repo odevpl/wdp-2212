@@ -6,8 +6,14 @@
 
 .section {
   display: flex;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid $productSectionBorder;
 }
 
+.productDetails {
+  padding: 30px;
+}
 .price {
   display: flex;
   align-items: center;
@@ -22,9 +28,57 @@
 
 }
 
+.smallGallery {
+  position: relative;
+}
+
+.gallerySmallImage {
+  margin: 10px 12px;
+}
+
+.smallGalleryButton {
+  position: absolute;
+  top: 45px;
+  margin-right: 20px;
+}
+
+.smallGalleryButtonLeft {
+  @extend .smallGalleryButton;
+  margin-right: 40px;
+}
+
+.smallGalleryButtonRight {
+  @extend .smallGalleryButton;
+  margin-left: -28px;
+}
+
 .titleSection {
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
+}
+
+.priceSection {
+  padding: 20px 0;
+  border-bottom: 2px solid $productSectionBorder;
+}
+
+.addToCartSection {
+  padding: 20px 0;
+}
+
+.quantitySection {
+  padding: 20px 0;
+  border-bottom: 2px solid $productSectionBorder;
+}
+
+.titleButtonSection {
+  padding-top: 9px;
+}
+
+.favoriteSection {
+  border-bottom: 2px solid $productSectionBorder;
+  padding: 20px 0;
 }
 
 .iconTransparent {
@@ -34,8 +88,160 @@
     margin-right: 3px;
 }
 
+.iconTransparentSocial {
+  background-color: #fff;
+  border: 1px solid $product-page-gray;
+  color: black;
+  margin-right: 3px;
+}
+
 .productQuantity {
   width: 65px;
   padding-top: 2px;
   text-align: center;
 }
+
+.overviewSection {
+  padding: 20px 0;
+  border-bottom: 2px solid $productSectionBorder;
+}
+
+.availbilitySection {
+  border-bottom: 2px solid $productSectionBorder;
+}
+
+.availbilityPoints {
+  padding: 20px 0;
+  display: flex;
+}
+
+.socialSection {
+  padding: 30px 0;
+  button {
+    margin-right: 10px;
+  }
+}
+
+.iconSocial {
+  @extend .iconTransparentSocial;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 3px 12px;
+}
+
+.facebook {
+  color: $facebookIconColor;
+}
+
+.iconSocialFacebook {
+  @extend .iconSocial;
+}
+
+.iconSocialFacebook:hover .facebook {
+  color: white;
+}
+
+.iconSocialFacebook:hover {
+  background-color: $facebookIconColor;
+  color: white;
+}
+
+.youtube {
+  color: $youtubeIconColor;
+}
+
+.iconSocialYT {
+  @extend .iconSocial;
+}
+.iconSocialYT:hover .youtube {
+  color: white;
+}
+
+.iconSocialYT:hover {
+  background-color: $youtubeIconColor;
+  color: white;
+}
+
+
+.google {
+  color: $googleIconColor;
+}
+
+.iconSocialGoogle {
+  @extend .iconSocial;
+}
+
+.iconSocialGoogle:hover .google {
+  color: white;
+}
+
+.iconSocialGoogle:hover {
+  background-color: $googleIconColor;
+  color: white;
+}
+
+.twitter {
+  color: $twitterIconColor;
+}
+
+.iconSocialTwitter {
+  @extend .iconSocial;
+}
+
+.iconSocialTwitter:hover .twitter {
+  color: white;
+}
+
+.iconSocialTwitter:hover {
+  background-color: $twitterIconColor;
+  color: white;
+}
+
+.pinterest {
+  color: $pinterestIconColor;
+}
+
+.iconSocialPinterest {
+  @extend .iconSocial;
+}
+
+.iconSocialPinterest:hover .pinterest {
+  color: white;
+}
+
+.iconSocialPinterest:hover {
+  background-color: $pinterestIconColor;
+  color: white;
+}
+
+.linkedin {
+  color: $pinterestIconColor;
+  text-align: center;
+}
+
+.iconSocialLinkedin {
+  @extend .iconSocial;
+}
+
+.iconSocialLinkedin:hover .pinterest {
+  color: white;
+}
+
+.iconSocialLinkedin:hover {
+  background-color: $linkedinIconColor;
+  color: white;
+}
+
+
+
+
+// .twitter:hover {
+//   background-color: $tweeterIconColor;
+//   color: blue;
+// }
+// $googleIconColor: $googleRed;
+// $facebookIconColor: $facebookBlue;
+// $tweeterIconColor:  $tweeterBlue;
+// $pinterestIconColor: $pinterestRed;
+// $linkedinIconColor: $linkedinBlue;
+

@@ -12,7 +12,12 @@ $projectGoldDark: #d47f10;
 $elementGrayLight: #b6b6b6;
 $veryLightOrange: #faebd7;
 $errorMsg: red;
-
+$googleRed: #de5246;
+$facebookBlue: #4267B2;
+$twitterBlue:  #1DA1F2;
+$pinterestRed: #E60023;
+$linkedinBlue: #0A66C2;
+$youtubeRed: #FF0000;
 // PLEASE DON"T USE VARIABLES ABOVE!
 
 $base-padding: 24px;
@@ -50,6 +55,14 @@ $modal-popup-tertiary: $veryLightGray;
 $modal-popup-quaternary: $veryLightOrange;
 
 $product-page-gray: $lightestGray;
+
+$googleIconColor: $googleRed;
+$facebookIconColor: $facebookBlue;
+$twitterIconColor: $twitterBlue;
+$pinterestIconColor: $pinterestRed;
+$linkedinIconColor: $linkedinBlue;
+$youtubeIconColor: $youtubeRed;
+$productSectionBorder: $veryLightGray;
 
 $blog-white: $white;
 
