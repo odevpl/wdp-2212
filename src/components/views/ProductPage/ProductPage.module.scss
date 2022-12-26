@@ -4,6 +4,10 @@
   padding: $base-padding 0;
 }
 
+.section {
+  display: flex;
+}
+
 .price {
   display: flex;
   align-items: center;
@@ -15,4 +19,23 @@
     color: $header-topbar-bg;
     opacity: 0.5;
   }
+
+}
+
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconTransparent {
+    background-color: #fff;
+    border: 1px solid $product-page-gray;
+    color: black;
+    margin-right: 3px;
+}
+
+.productQuantity {
+  width: 65px;
+  padding-top: 2px;
+  text-align: center;
 }

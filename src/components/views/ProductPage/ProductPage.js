@@ -7,6 +7,10 @@ import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 import {
   faShoppingBasket,
   faExchangeAlt,
+  faMinus, 
+  faPlus,
+  faChevronLeft,
+  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faHeart,
@@ -51,11 +55,24 @@ const ProductPage = props => {
     
       <div className={styles.section}>
         <div className={styles.gallery}>
-
+          <div className={styles.largeImage}>
+            <img src={product.photo} alt={product.name} />
+          </div>
         </div>
         <div className={styles.productDetails}>
           <div className={styles.titleSection}>
-            <h2>{product.name}</h2>
+            <div>
+              <h2>{product.name}</h2>
+            </div>
+            <div>
+              <Button variant='small' className={styles.iconTransparent}>
+                <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+              </Button>
+              <Button variant='small' className={styles.iconTransparent}>
+                <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+              </Button>
+            </div>
+            
           </div>
           <div className={styles.favoriteSection}>
             {stars.map(item => item)} <span>(0 review) Add Your Review</span>
@@ -69,20 +86,29 @@ const ProductPage = props => {
             </div>
           </div>
           <div className={styles.addToCartSection}>
-            <Button variant='small'>
+            <Button variant='small' className={styles.iconTransparent}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
-            <Button variant='small'>
+            <Button variant='small' className={styles.iconTransparent}>
               <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
             </Button>
-            <Button variant='small'>
+            <Button variant='small' className={styles.iconTransparent}>
               <FontAwesomeIcon icon={faExchangeAlt}></FontAwesomeIcon>
             </Button>
-            <Button variant='small'>
+            <Button variant='small' className={styles.iconTransparent}>
               <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
             </Button>
           </div>
-
+          <div className={styles.quantitySection}>
+            <span>Quantity:</span> 
+            <input type='text' className={styles.productQuantity} defaultValue='1'/>
+            <Button variant='small' className={styles.iconTransparent}>
+              <FontAwesomeIcon icon={faMinus}></FontAwesomeIcon>
+            </Button>
+            <Button variant='small' className={styles.iconTransparent}>
+              <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>
+            </Button>
+          </div>
         </div>
       </div>
      
