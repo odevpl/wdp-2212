@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as blackStar } from '@fortawesome/free-solid-svg-icons';
+import { faExpand, faExpandAlt, faExpandArrowsAlt, faStar as blackStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as emptyStar } from '@fortawesome/free-regular-svg-icons';
 import {
   faShoppingBasket,
@@ -64,7 +64,10 @@ const ProductPage = props => {
       <div className={styles.section}>
         <div className={styles.gallery}>
           <div className={styles.largeImage}>
-            <img src={product.photo} alt={product.name} />
+            <img src={product.photo} alt={product.name} /> 
+            <Button variant='small' className={styles.iconTransparent + ' ' + styles.photoButton}>
+              <FontAwesomeIcon icon={faExpandAlt}></FontAwesomeIcon>
+            </Button>
           </div>
           <div className={styles.smallGallery}>
             <Button variant='small' className={styles.iconTransparent + ' ' + styles.smallGalleryButtonLeft}>
@@ -135,10 +138,10 @@ const ProductPage = props => {
           </div>
           <div className={styles.availbilitySection}>
             <div className={styles.availbilityPoints}>
-              <b>Availability: </b> <p>In Stock</p>
+              <b>Availability: &nbsp;</b>In Stock
             </div>
             <div className={styles.availbilityPoints}>
-              <b>Category: </b> <p>Furniture</p>
+              <b>Category: &nbsp;</b><p>Furniture</p>
             </div>
           </div>
           <div className={styles.socialSection}>

@@ -14,6 +14,7 @@
 .productDetails {
   padding: 30px;
 }
+
 .price {
   display: flex;
   align-items: center;
@@ -26,6 +27,15 @@
     opacity: 0.5;
   }
 
+}
+
+.largeImage {
+  position: relative;
+  .photoButton {
+    position: absolute;
+    bottom: 8px;
+    right: 4px;
+  }
 }
 
 .smallGallery {
@@ -68,7 +78,7 @@
 }
 
 .quantitySection {
-  padding: 20px 0;
+  padding: 11px 0;
   border-bottom: 2px solid $productSectionBorder;
 }
 
@@ -85,7 +95,7 @@
     background-color: #fff;
     border: 1px solid $product-page-gray;
     color: black;
-    margin-right: 3px;
+    margin-right: 5px;
 }
 
 .iconTransparentSocial {
@@ -95,9 +105,18 @@
   margin-right: 3px;
 }
 
+.quantitySection {
+  input {
+    margin: 15px 5px 2px 15px;
+  }
+  button {
+    margin-right: 4px;
+  }
+}
+
 .productQuantity {
   width: 65px;
-  padding-top: 2px;
+  padding-bottom: 2px;
   text-align: center;
 }
 
@@ -107,11 +126,13 @@
 }
 
 .availbilitySection {
+  padding-top: 15px;
   border-bottom: 2px solid $productSectionBorder;
 }
 
 .availbilityPoints {
-  padding: 20px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
   display: flex;
 }
 
