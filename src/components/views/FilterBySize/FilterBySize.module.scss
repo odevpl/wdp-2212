@@ -1,0 +1,94 @@
+@import "../../../styles/settings.scss";
+
+h4 {
+  border-bottom: 1px solid $text-color;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 400;
+}
+
+.lineWrapper:hover {
+  color: $text-color;
+  cursor: pointer;
+  padding-left: 10px;
+
+  .number {
+    background: $text-color;
+  }
+}
+
+.number {
+  background-color: $text-color;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  color: $white;
+  padding: 2px 0 0 7px;
+}
+
+.text {
+  padding: 0 10px 0 10px;
+}
+
+/*Custom checkbox*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.choice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 1px solid $text-color;
+  border-radius: 20%;
+}
+
+.container input:checked ~ .choice {
+  background-color: $primary;
+  border: none;
+}
+
+.choice:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .choice:after {
+  display: block;
+}
+
+.container .choice:after {
+  left: 6px;
+  top: 2px;
+  width: 8px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
