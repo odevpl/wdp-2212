@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './ProductList.module.scss';
 import Brands from '../../layout/Brands/Brands';
 import FilterBySize from '../FilterBySize/FilterBySize';
+import FilterByCategories from '../FilterByCategories/FilterByCategories';
 
 const ProductList = () => {
   return (
@@ -14,6 +15,7 @@ const ProductList = () => {
         <div className='row'>
           <div className='col-9'>Product List</div>
           <div className='col-3'>Filter
+          <FilterByCategories />
           <FilterBySize />
           </div>
         </div>
