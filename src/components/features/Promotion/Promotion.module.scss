@@ -234,6 +234,16 @@
             .right {
                 width: 49%;
             }
+
+            @media (max-width: 1200px) {
+                    left: 75%;  
+                .left {
+                    width: 20%;
+                }
+                .right {
+                    width: 20%;
+                }
+            }
         }  
     }
 }

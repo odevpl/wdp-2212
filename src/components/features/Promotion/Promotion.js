@@ -2,15 +2,21 @@ import React from 'react';
 import styles from './Promotion.module.scss';
 import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faExchangeAlt, faShoppingBasket, faCaretLeft, faCaretRight, faEye } from '@fortawesome/free-solid-svg-icons';
+import {
+  faStar,
+  faExchangeAlt,
+  faShoppingBasket,
+  faCaretLeft,
+  faCaretRight,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { getDeals } from '../../../redux/hotDealsRedux';
 
 const Promotion = () => {
-
-  const dealsList= useSelector(getDeals);
+  const dealsList = useSelector(getDeals);
 
   const checkOldPrice = () => {
     if (dealsList[0].oldPrice !== undefined) {
@@ -22,21 +28,21 @@ const Promotion = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className='col-4'>
+          <div className='d-none d-md-none d-lg-block col-4'>
             <div className={styles.leftColumn}>
               <div className={styles.header}>
                 <h3>Hot Deals</h3>
               </div>
-              <div className={styles.dots}>  
+              <div className={styles.dots}>
                 <ul>
                   <li>
-                    <a href="#"></a>
+                    <a href='#'></a>
                   </li>
                   <li>
-                    <a href="#"></a>
+                    <a href='#'></a>
                   </li>
                   <li>
-                    <a href="#"></a>
+                    <a href='#'></a>
                   </li>
                 </ul>
               </div>
@@ -105,7 +111,7 @@ const Promotion = () => {
               </div>
             </div>
           </div>
-          <div className='col-8'>
+          <div className='col-lg-8'>
             <div className={styles.rightColumn}>
               <div className={styles.photo2}>
                 <img className={styles.pic2} src={dealsList[1].photo2} alt='photo2' />
