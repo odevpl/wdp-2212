@@ -113,7 +113,7 @@ const ProductBox = ({
       </Modal>
 
       <div className={styles.photo}>
-        <Link to={`/shop/${id}`}>
+        <Link to={`/product/${id}`}>
           <img src={photo} alt='furniture' />
         </Link>
         {promo && <div className={styles.sale}>{promo}</div>}
@@ -127,7 +127,7 @@ const ProductBox = ({
         </div>
       </div>
       <div className={styles.content}>
-        <Link to={`/shop/${id}`}>
+        <Link to={`/product/${id}`}>
           <h5>{name}</h5>
         </Link>
         <Stars stars={stars} userStars={userStars} id={id} />
