@@ -7,7 +7,6 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 import scssVariables from '../../../styles/settings.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
 
-
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
@@ -28,12 +27,14 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, display } = this.props;
+    const { categories, products, display, amount } = this.props;
     const { activeCategory, activePage, fade } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
 
-    const pagesCount = Math.ceil(categoryProducts.length / (display.amount || 8));
+    const pagesCount = Math.ceil(
+      categoryProducts.length / (amount || display.amount || 8)
+    );
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -96,7 +97,10 @@ class NewFurniture extends React.Component {
           </div>
           <div className={clsx('row', fade ? styles.fadeIn : styles.fadeOut)}>
             {categoryProducts
-              .slice(activePage * display.amount, (activePage + 1) * display.amount)
+              .slice(
+                activePage * (amount || display.amount),
+                (activePage + 1) * (amount || display.amount)
+              )
               .map(item => (
                 <div
                   key={item.id}
@@ -136,6 +140,7 @@ NewFurniture.propTypes = {
     })
   ),
   display: PropTypes.object,
+  amount: PropTypes.number,
 };
 
 NewFurniture.defaultProps = {
