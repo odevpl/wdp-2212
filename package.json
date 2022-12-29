@@ -68,6 +68,7 @@
     "react-swipeable": "^7.0.0",
     "react-test-renderer": "^16.9.0",
     "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
     "sass": "^1.54.3",
     "shortid": "^2.2.16",
     "yup": "^0.32.11"
