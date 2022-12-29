@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductPage.module.scss';
+import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faExpand,
@@ -231,6 +232,7 @@ const ProductPage = props => {
           </div>
         </div>
       </div>
+      <NewFurniture amount={4} />
     </div>
   );
 };
