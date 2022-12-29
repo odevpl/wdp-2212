@@ -25,6 +25,14 @@ const Promotion = () => {
     }
   };
 
+  const leftAction = () => {
+    console.log('lewy');
+  };
+
+  const rightAction = () => {
+    console.log('prawy');
+  };
+
   return (
     <Swipeable rightAction={rightAction} leftAction={leftAction}>
       <div className={styles.root}>
@@ -100,14 +108,14 @@ const Promotion = () => {
                     </Button>
                     <Button className={styles.option} variant='outline'>
                       <FontAwesomeIcon icon={faExchangeAlt}>
-                      Add to compare
+                        Add to compare
                       </FontAwesomeIcon>
                     </Button>
                   </div>
                   <div className={styles.price}>
                     {checkOldPrice()}
                     <Button noHover variant='small'>
-                    $ {dealsList[0].price}
+                      $ {dealsList[0].price}
                     </Button>
                   </div>
                 </div>
