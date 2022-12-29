@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
@@ -13,7 +13,7 @@ import {
   addToCompareList,
   removeFromCompareList,
 } from '../../../redux/compareListRedux';
-import { toggleCompare } from '../../../redux/productsRedux';
+import { toggleCompare, getAll } from '../../../redux/productsRedux';
 import Stars from '../Stars/Stars';
 import { Modal } from 'react-bootstrap';
 import { changeComparedProductFavoriteStatus } from '../../../redux/compareListRedux';
@@ -40,9 +40,21 @@ const ProductBox = ({
     }
   };
 
+  const data = JSON.parse(localStorage.getItem("'fav-" + id + "'"));
+  const [fav, setFav] = useState(data);
+
+  useEffect(() => {
+    if (fav) {
+      localStorage.setItem("'fav-" + id + "'", JSON.stringify(true));
+    } else if (!fav) {
+      localStorage.removeItem("'fav-" + id + "'");
+    }
+  }, [fav, id]);
+
   const handleClickFavorite = id => {
     dispatch(favoriteProduct(id));
     dispatch(changeComparedProductFavoriteStatus(id));
+    setFav(!fav);
   };
 
   const handleAddToCompare = e => {
@@ -136,7 +148,7 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <Button
-            favorite={favorite}
+            favorite={fav}
             variant='outline'
             onClick={e => {
               e.preventDefault();
