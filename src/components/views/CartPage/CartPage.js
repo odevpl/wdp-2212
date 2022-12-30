@@ -4,8 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAll, removeAllProducts, removeProduct } from '../../../redux/cartRedux';
 
 const CartPage = () => {
+  const cartProductsList = useSelector(getAll);
+  const dispatch = useDispatch();
+
+  const handleProceedToCheckout = e => {
+    e.preventDefault();
+    dispatch(removeAllProducts());
+  };
+
+  const handleRemoveProduct = (e, id) => {
+    e.preventDefault();
+    dispatch(removeProduct(id));
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.topPage}>
@@ -35,72 +50,38 @@ const CartPage = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.remove} icon={faTimes} />
-                <div className={styles.productImage}></div>
-                Placeholder Product 7
-              </th>
-              <td className='align-middle'>$5.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    +
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
-                  </div>
-                  <Button className={styles.button2} variant='outline'>
-                    -
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$5.00</td>
-            </tr>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.remove} icon={faTimes} />
-                <div className={styles.productImage}></div>
-                Placeholder Product 4
-              </th>
-              <td className='align-middle'>$67.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    +
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
-                  </div>
-                  <Button className={styles.button2} variant='outline'>
-                    -
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$67.00</td>
-            </tr>
-            <tr>
-              <th scope='row' className={styles.product}>
-                <FontAwesomeIcon className={styles.remove} icon={faTimes} />
-                <div className={styles.productImage}></div>
-                Placeholder Product 8 - Black, Amber 65
-              </th>
-              <td className='align-middle'>$20.00</td>
-              <td className='align-middle'>
-                <div className={styles.quantity}>
-                  <Button className={styles.button1} variant='outline'>
-                    +
-                  </Button>
-                  <div className={styles.number}>
-                    <input></input>
-                  </div>
-                  <Button className={styles.button2} variant='outline'>
-                    -
-                  </Button>
-                </div>
-              </td>
-              <td className='align-middle text-center pl-5'>$20.00</td>
-            </tr>
+            {cartProductsList.map(product => {
+              return (
+                <tr key={product.name}>
+                  <th scope='row' className={styles.product}>
+                    <FontAwesomeIcon
+                      className={styles.remove}
+                      icon={faTimes}
+                      onClick={e => handleRemoveProduct(e, product.id)}
+                    />
+                    <div className={styles.productImage}>
+                      <img src={product.photo} alt='furniture in the cart' />
+                    </div>
+                    {product.name}
+                  </th>
+                  <td className='align-middle'>${Number(product.price).toFixed(2)}</td>
+                  <td className='align-middle'>
+                    <div className={styles.quantity}>
+                      <Button className={styles.button1} variant='outline'>
+                        +
+                      </Button>
+                      <div className={styles.number}>
+                        <input></input>
+                      </div>
+                      <Button className={styles.button2} variant='outline'>
+                        -
+                      </Button>
+                    </div>
+                  </td>
+                  <td className='align-middle text-center pl-5'>$5.00</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <div className={styles.couponCode}>
@@ -124,7 +105,14 @@ const CartPage = () => {
           <p>$92.00</p>
         </div>
         <Link to={`/`} className={styles.checkout}>
-          <Button className={styles.checkout}>PROCEED TO CHECKOUT</Button>
+          <Button
+            className={styles.checkout}
+            onClick={e => {
+              handleProceedToCheckout(e);
+            }}
+          >
+            PROCEED TO CHECKOUT
+          </Button>
         </Link>
       </div>
     </div>

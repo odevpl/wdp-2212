@@ -17,6 +17,7 @@ import { toggleCompare, getAll } from '../../../redux/productsRedux';
 import Stars from '../Stars/Stars';
 import { Modal } from 'react-bootstrap';
 import { changeComparedProductFavoriteStatus } from '../../../redux/compareListRedux';
+import { addProduct } from '../../../redux/cartRedux';
 
 const ProductBox = ({
   name,
@@ -89,6 +90,12 @@ const ProductBox = ({
     setShow(true);
   };
 
+  // add to cart button action
+  const handleAddToCart = (e, id, name, price, photo) => {
+    e.preventDefault();
+    dispatch(addProduct({ id, name, price, photo }));
+  };
+
   return (
     <div className={styles.root}>
       <Modal
@@ -133,7 +140,12 @@ const ProductBox = ({
           <Button variant='small' onClick={handleModalOpen}>
             Quick View
           </Button>
-          <Button variant='small'>
+          <Button
+            variant='small'
+            onClick={e => {
+              handleAddToCart(e, id, name, price, photo);
+            }}
+          >
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
         </div>
