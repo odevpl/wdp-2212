@@ -76,7 +76,7 @@ const ProductPage = props => {
               variant='small'
               className={styles.iconTransparent + ' ' + styles.photoButton}
             >
-              <FontAwesomeIcon icon={faExpandAlt}></FontAwesomeIcon>
+              <FontAwesomeIcon icon={faExpandArrowsAlt}></FontAwesomeIcon>
             </Button>
           </div>
           <div className={styles.smallGallery}>
