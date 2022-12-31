@@ -1,0 +1,62 @@
+@import "../../../styles/settings.scss";
+h4 {
+  border-bottom: 1px solid $text-color;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+// Custom checbox
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+   
+    &:hover{
+    margin-left: 10px;
+   } 
+}
+
+.container label {
+  margin: 0;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.container input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  display: flex;
+  position: absolute;
+}
+
+.container label::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
+  background-color: red;
+  margin-right: 10px;
+}
+
+.container .green::before {
+  background-color: green;
+}
+.container .pink::before {                                   
+  background-color: pink;
+}
+.container .blue::before {
+  background-color: blue;
+}
+.container .black::before {
+  background-color: black;
+}
+.container input[type="checkbox"]:checked + label::before {
+  content: '\002714';
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

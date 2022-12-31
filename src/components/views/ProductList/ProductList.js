@@ -7,6 +7,7 @@ import FilterByCategories from '../FilterByCategories/FilterByCategories';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import ChatBot from '../../features/ChatBot/ChatBot';
 import Banner from '../../features/Banner/Banner';
+import FilterByColor from '../FilterByColor/FilterByColor';
 
 const ProductList = () => {
   return (
@@ -16,10 +17,12 @@ const ProductList = () => {
           <div className='col'><Banner /></div>
         </div>
         <div className='row'>
-          <div className='col-9'><NewFurniture amount={12} /></div>
+          <div className='col-9'>Product List</div>
           <div className='col-3'>
-          <FilterByCategories />
-          <FilterBySize />
+            Filter
+            <FilterByCategories />
+            <FilterBySize />
+            <FilterByColor />
           </div>
         </div>
         <div className='row'>
