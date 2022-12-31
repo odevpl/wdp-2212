@@ -114,7 +114,7 @@ const Promotion = () => {
                   </div>
                   <div className={styles.price}>
                     {checkOldPrice()}
-                    <Button noHover variant='small'>
+                    <Button noHover className={styles.priceButton} variant='small'>
                       $ {dealsList[0].price}
                     </Button>
                   </div>
