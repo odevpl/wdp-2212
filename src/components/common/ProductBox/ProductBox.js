@@ -18,6 +18,7 @@ import Stars from '../Stars/Stars';
 import { Modal } from 'react-bootstrap';
 import { changeComparedProductFavoriteStatus } from '../../../redux/compareListRedux';
 import { addProduct } from '../../../redux/cartRedux';
+import { getAll as getAllCartProducts } from '../../../redux/cartRedux';
 
 const ProductBox = ({
   name,
@@ -91,9 +92,12 @@ const ProductBox = ({
   };
 
   // add to cart button action
+  const productsInCart = useSelector(getAllCartProducts);
   const handleAddToCart = (e, id, name, price, photo) => {
     e.preventDefault();
-    dispatch(addProduct({ id, name, price, photo }));
+    if (productsInCart.find(product => product.id === id)) {
+      alert('product already in the cart');
+    } else dispatch(addProduct({ id, name, price, photo, amount: 1 }));
   };
 
   return (
