@@ -1,24 +1,31 @@
 import styles from './CartPage.module.scss';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAll, removeAllProducts, removeProduct } from '../../../redux/cartRedux';
+import {
+  calculateSubtotalPrice,
+  getAll,
+  getSubtotalPrice,
+  getTotalPrice,
+  calculateTotalPrice,
+  removeAllProducts,
+} from '../../../redux/cartRedux';
+import { SingleCartProduct } from '../../features/SingleCartProduct/SingleCartProduct';
 
 const CartPage = () => {
   const cartProductsList = useSelector(getAll);
   const dispatch = useDispatch();
+  const subtotal = useSelector(getSubtotalPrice);
+  const total = useSelector(getTotalPrice);
 
   const handleProceedToCheckout = e => {
     e.preventDefault();
     dispatch(removeAllProducts());
-  };
-
-  const handleRemoveProduct = (e, id) => {
-    e.preventDefault();
-    dispatch(removeProduct(id));
+    dispatch(calculateSubtotalPrice());
+    dispatch(calculateTotalPrice());
   };
 
   return (
@@ -52,34 +59,14 @@ const CartPage = () => {
           <tbody>
             {cartProductsList.map(product => {
               return (
-                <tr key={product.name}>
-                  <th scope='row' className={styles.product}>
-                    <FontAwesomeIcon
-                      className={styles.remove}
-                      icon={faTimes}
-                      onClick={e => handleRemoveProduct(e, product.id)}
-                    />
-                    <div className={styles.productImage}>
-                      <img src={product.photo} alt='furniture in the cart' />
-                    </div>
-                    {product.name}
-                  </th>
-                  <td className='align-middle'>${Number(product.price).toFixed(2)}</td>
-                  <td className='align-middle'>
-                    <div className={styles.quantity}>
-                      <Button className={styles.button1} variant='outline'>
-                        +
-                      </Button>
-                      <div className={styles.number}>
-                        <input></input>
-                      </div>
-                      <Button className={styles.button2} variant='outline'>
-                        -
-                      </Button>
-                    </div>
-                  </td>
-                  <td className='align-middle text-center pl-5'>$5.00</td>
-                </tr>
+                <SingleCartProduct
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  photo={product.photo}
+                  amount={product.amount}
+                />
               );
             })}
           </tbody>
@@ -98,11 +85,11 @@ const CartPage = () => {
         <h3>Cart totals</h3>
         <div className={styles.subtotal}>
           <h5>Subtotal</h5>
-          <p>$92.00</p>
+          <p>${subtotal.toFixed(2)}</p>
         </div>
         <div className={styles.total}>
           <h5>Total</h5>
-          <p>$92.00</p>
+          <p>${total.toFixed(2)}</p>
         </div>
         <Link to={`/`} className={styles.checkout}>
           <Button

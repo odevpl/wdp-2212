@@ -520,6 +520,9 @@ const initialState = {
     },
   ],
   cart: {
+    subtotalPrice: 0,
+    totalPrice: 0,
+    deliveryCost: 20,
     products: [],
   },
   clientFeedback: [
