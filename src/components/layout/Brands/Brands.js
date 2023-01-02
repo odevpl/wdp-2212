@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../common/Button/Button';
 import { useSelector } from 'react-redux';
@@ -40,15 +40,21 @@ const Brands = props => {
     <Container>
       <div className={styles.brandsSection}>
         <div className={styles.brandsWrapper}>
-          <button className={styles.brandbutton} variant='carousel' onClick={leftAction}>
+          <button
+            className={styles.brandbutton}
+            variant='carousel'
+            onClick={leftAction}
+          >
             <BrandsButton arrowDirection={faChevronLeft} />
           </button>
-          {brands
-          .slice(activePage * newRwd, (activePage + 1) * newRwd)
-          .map(brand => (
+          {brands.slice(activePage * newRwd, (activePage + 1) * newRwd).map(brand => (
             <Brand {...brand} key={brand.id} />
           ))}
-          <button className={styles.brandbutton} variant='carousel'  onClick={rightAction}>
+          <button
+            className={styles.brandbutton}
+            variant='carousel'
+            onClick={rightAction}
+          >
             <BrandsButton arrowDirection={faChevronRight} />
           </button>
         </div>

@@ -1,7 +1,11 @@
 @import "../../../styles/settings.scss";
 
 .brandElement {
-    padding: 14px;
+  display: inline-flex;
+
+  img{
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -22,6 +26,6 @@
   @media (max-width: 511px) {
     .brandElement {
         padding: 2px;
-      
+
     }
   }

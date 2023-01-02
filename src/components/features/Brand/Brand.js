@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../Brand/Brand.module.scss';
 
-const Brand = ({ id, alt, image }) => {
+const Brand = ({ alt, image }) => {
   return (
     <div className={styles.brandElement}>
       <img src={image} alt={alt} />
@@ -11,7 +11,6 @@ const Brand = ({ id, alt, image }) => {
 };
 
 Brand.propTypes = {
-  id: PropTypes.string,
   image: PropTypes.string,
   alt: PropTypes.string,
 };
